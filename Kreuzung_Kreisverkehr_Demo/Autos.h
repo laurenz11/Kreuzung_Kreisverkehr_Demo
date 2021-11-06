@@ -34,7 +34,7 @@ protected:
 	float geschwindigkeit;
 	float weg;
 	float zeit;
-	float zeitInterval;
+	float wegInterval;
 	float gesamtWeg;
 	sf::Clock internalTimer;//wird beim spawn gestartet
 	float fahrtweg;//berechneter Fahrtweg für die einzelnen Fahrtwege
