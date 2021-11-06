@@ -7,7 +7,9 @@ Autos::Autos(std::string Spawn, std::string Direction, float Fahrtweg) {
 	direction = Direction;
 	fahrtweg = Fahrtweg;
 	internalTimer.restart();
-	anfangsGeschwindigkeit = 8.333;
+	anfangsGeschwindigkeit = 8.333; // in meter pro sekunde 
+	gesamtWeg = 0;
+	zeitInterval = 0;
 }
 
 Autos::~Autos()
@@ -16,6 +18,7 @@ Autos::~Autos()
 
 void Autos::speedUp()
 {
+	setZeit();
 	if (geschwindigkeit <= 8.333) {
 		geschwindigkeit = beschleunigung * zeit + anfangsGeschwindigkeit;//aus Integral weg
 		weg = 0.5 * beschleunigung * (pow(zeit, 2)) + (anfangsGeschwindigkeit * zeit);//aus Integral geschwindigkeit
@@ -29,6 +32,7 @@ void Autos::speedUp()
 
 void Autos::slowDown()
 {
+	setZeit();
 	geschwindigkeit = bremsBeschleunigung * zeit + anfangsGeschwindigkeit;
 	if (geschwindigkeit >= 0) {
 		weg = 0.5 * bremsBeschleunigung * (pow(zeit, 2)) + (anfangsGeschwindigkeit * zeit);
@@ -42,6 +46,7 @@ void Autos::slowDown()
 
 void Autos::keepPace()
 {
+	setZeit();
 	weg = geschwindigkeit * zeit;
 
 	gesamtWeg = gesamtWeg + weg;
@@ -56,4 +61,7 @@ void Autos::newPace()
 void Autos::setZeit()
 {
 	zeit = internalTimer.getElapsedTime().asMicroseconds()*pow(10,-6);
+	zeitInterval = zeit - zeitInterval;
+	zeit = zeitInterval;
 }
+

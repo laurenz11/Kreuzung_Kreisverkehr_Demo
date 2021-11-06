@@ -89,6 +89,12 @@ private:
 	int counterWest = 0;
 	int counterSued = 0;
 
+	//Zähler für die Autos, die die Simulation verlassen haben
+	int counterOutNord = 0;
+	int counterOutOst = 0;
+	int counterOutWest = 0;
+	int counterOutSued = 0;
+
 	//Bezeichner für die Richtung und den Spawn der Autos
 	std::string nord;
 	std::string ost;

@@ -10,6 +10,9 @@ SimulationMaster::~SimulationMaster()
 }
 
 void SimulationMaster::run() {
+	globalTimer.restart();
+	simulationsdauer.restart();
+	std::cout << globalTimer.getElapsedTime().asSeconds() << std::endl;
 	while (simulationsdauer.getElapsedTime().asSeconds() <= 5) {
 		updateLists();
 	}
@@ -24,6 +27,17 @@ void SimulationMaster::updateLists()
 
 void SimulationMaster::moveAutos() 
 {
+	
+	for (auto x : Nord_West1)
+	{
+		if (x->getFahrtWeg() > 0) 
+		{
+			x->speedUp();
+			std::cout << x->getFahrtWeg() << std::endl;
+		}
+		else
+			counterOutWest++;
+	}
 }
 void SimulationMaster::allowMovement()
 {
@@ -56,8 +70,10 @@ void SimulationMaster::spawnAutos()//Fragt die Zufallszahlen ab und füllt dann d
 			}
 			else //Fahr nach Westen
 			{
-				this->Nord_West1.push_back(new AutosFahrertyp1(nord, west, 95.142));
-				counterNord++;
+				if (Nord_West1.size() <= 0) {
+					this->Nord_West1.push_back(new AutosFahrertyp1(nord, west, 95.142));
+					counterNord++;
+				}
 			}
 		}
 		else if (randValueSpawn >= 15 && randValueSpawn < 50) //Spawn im Osten
@@ -290,8 +306,8 @@ void SimulationMaster::spawnAutos()//Fragt die Zufallszahlen ab und füllt dann d
 		}
 	}
 	std::cout << counterNord << std::endl;
-	std::cout << counterOst << std::endl;
-	std::cout << counterSued << std::endl;
-	std::cout << counterWest << std::endl;
+	//std::cout << counterOst << std::endl;
+	//std::cout << counterSued << std::endl;
+	//std::cout << counterWest << std::endl;
 }
 

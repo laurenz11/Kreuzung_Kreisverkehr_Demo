@@ -19,6 +19,11 @@ public:
 	//float getWeg();//gibt Weg zurück
 	void setZeit();//Setzt die zeit in der Formel mit der abgelaufenen Zeit des internalCounter gleich
 
+	float getFahrtWeg() 
+	{
+		return fahrtweg;
+	}
+
 protected:
 	std::string spawn;//ort des spawns
 	std::string direction;//Zielrichtung
@@ -29,6 +34,7 @@ protected:
 	float geschwindigkeit;
 	float weg;
 	float zeit;
+	float zeitInterval;
 	float gesamtWeg;
 	sf::Clock internalTimer;//wird beim spawn gestartet
 	float fahrtweg;//berechneter Fahrtweg für die einzelnen Fahrtwege
