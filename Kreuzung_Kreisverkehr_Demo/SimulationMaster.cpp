@@ -12,9 +12,9 @@ SimulationMaster::~SimulationMaster()
 void SimulationMaster::run() {
 	globalTimer.restart();
 	simulationsdauer.restart();
-	std::cout << globalTimer.getElapsedTime().asSeconds() << std::endl;
 	while (simulationsdauer.getElapsedTime().asSeconds() <= 5) {
 		updateLists();
+		std::cout << globalTimer.getElapsedTime().asSeconds() << std::endl;
 	}
 }
 
@@ -305,7 +305,7 @@ void SimulationMaster::spawnAutos()//Fragt die Zufallszahlen ab und füllt dann d
 			}
 		}
 	}
-	std::cout << counterNord << std::endl;
+	//std::cout << counterNord << std::endl;
 	//std::cout << counterOst << std::endl;
 	//std::cout << counterSued << std::endl;
 	//std::cout << counterWest << std::endl;

@@ -38,8 +38,7 @@ public:
 
 	std::vector<AutosFahrertyp1*> West_Ost1;
 	std::vector<AutosFahrertyp1*> West_Sued1;
-	std::vector<AutosFahrertyp1*
-	> West_Nord1;
+	std::vector<AutosFahrertyp1*> West_Nord1;
 
 	//Vectoren für Fahrertyp2
 	std::vector<AutosFahrertyp2*> Nord_West2;

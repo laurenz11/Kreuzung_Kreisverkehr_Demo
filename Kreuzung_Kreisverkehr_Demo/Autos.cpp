@@ -1,5 +1,8 @@
 #include "Autos.h"
 
+
+//Zykluszeiten vorgeben, Anfangsgeschwindigkeit 0, nur wenn ampel nicht rot ist, wenn linksabbieger fahren wollen , erstmal streckenabschnitt der blockiert laufen lassen
+//Geschwindigkeit die das Auto hat 
 Autos::Autos(std::string Spawn, std::string Direction, float Fahrtweg) {
 	beschleunigung = 2;
 	bremsBeschleunigung = -1;
@@ -64,5 +67,6 @@ void Autos::newPace()
 void Autos::setZeit()
 {
 	zeit = internalTimer.getElapsedTime().asSeconds();
+	std::cout << "internalTimer: " << zeit << std::endl;
 }
 
