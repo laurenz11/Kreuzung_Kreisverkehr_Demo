@@ -76,6 +76,6 @@ void Autos::newPace()
 void Autos::setZeit()
 {
 	zeit = internalTimer.getElapsedTime().asSeconds();
-	std::cout << "internalTimer: " << zeit << std::endl;
+	//std::cout << "internalTimer: " << zeit << std::endl;
 }
 

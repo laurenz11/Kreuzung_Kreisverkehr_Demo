@@ -3,6 +3,8 @@
 #include "AutosFahrertyp2.h"
 #include "AutosFahrertyp3.h"
 #include "time.h"
+#include "Ampel.h"
+
 class SimulationMaster
 {
 public: 
@@ -43,6 +45,11 @@ public:
 	std::vector<Autos*> West_Ost1;
 	std::vector<Autos*> West_Sued1;
 	std::vector<Autos*> West_Nord1;
+
+
+	//Einfügen der Ampelschaltung
+	Ampel* ampel;
+	void initAmpel();
 
 	/*Vectoren für Fahrertyp2
 	std::vector<Autos*> Nord_West2;

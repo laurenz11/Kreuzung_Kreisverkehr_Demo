@@ -2,6 +2,7 @@
 
 SimulationMaster::SimulationMaster()
 {
+	this->initAmpel();
 }
 
 SimulationMaster::~SimulationMaster()
@@ -9,11 +10,16 @@ SimulationMaster::~SimulationMaster()
 }
 
 void SimulationMaster::run() {
+
+	ampel->startAmpelTimer();
+
 	globalTimer.restart();
 	simulationsdauer.restart();
-	while (simulationsdauer.getElapsedTime().asSeconds() <= 20) {
+	while (simulationsdauer.getElapsedTime().asSeconds() <= 100) {
+		ampel->cycleAmpel();
 		updateLists();
-		std::cout << "globalTimer: " << globalTimer.getElapsedTime().asSeconds() << std::endl;
+		
+		//std::cout << "globalTimer: " << globalTimer.getElapsedTime().asSeconds() << std::endl;
 	}
 }
 
@@ -32,7 +38,7 @@ void SimulationMaster::moveAutos()
 		if (x->getFahrtWeg() > 0) 
 		{
 			x->speedUp();
-			std::cout << x->getFahrtWeg() << std::endl;
+			//std::cout << x->getFahrtWeg() << std::endl;
 		}
 		else
 			counterOutWest++;
@@ -40,6 +46,7 @@ void SimulationMaster::moveAutos()
 }
 void SimulationMaster::allowMovement()
 {
+
 }
 
 void SimulationMaster::spawnAutos()//Fragt die Zufallszahlen ab und füllt dann die entsptrechenden Vektoren
@@ -66,10 +73,6 @@ void SimulationMaster::spawnAutos()//Fragt die Zufallszahlen ab und füllt dann d
 	{
 		this->spawnAutosWest();
 	}
-	
-	
-	
-	
 }
 		
 
@@ -248,6 +251,11 @@ void SimulationMaster::spawnAutos()//Fragt die Zufallszahlen ab und füllt dann d
 	//std::cout << counterSued << std::endl;
 	//std::cout << counterWest << std::endl;
 
+
+void SimulationMaster::initAmpel()
+{
+	ampel = new Ampel();
+}
 
 void SimulationMaster::spawnAutosNord()
 {

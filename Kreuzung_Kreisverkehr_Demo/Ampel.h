@@ -1,11 +1,11 @@
 #pragma once
 #include "SFML/System/Clock.hpp"
-
+#include <iostream>
 
 class Ampel
 {
 public :
-	Ampel(bool nordSuedIsGreen, bool ostWestisGreen);
+	Ampel();
 	~Ampel();
 	
 	//Gibt uns nachher aus, ob die Ampel grün ist oder nicht
@@ -32,4 +32,3 @@ public :
 	bool checkIfGreenOstWest();
 
 };
-
