@@ -13,18 +13,12 @@ public :
 	bool OstWestIsGreen;
 
 	//Timer für die beiden gegenüberliegenden Ampeln
-	sf::Clock ampelTimerNordSued;
-	sf::Clock ampelTimerOstWest;
 	sf::Clock ampelTimer;
 
 	//startet AmpelTimer
-	void startAmpelTimerNordSued();
-	void startAmpelTimerOstWest();
 	void startAmpelTimer();
 
 	//Schaltet Ampel weiter
-	void cycleAmpelNordSued();
-	void cycleAmpelOstWest();
 	void cycleAmpel();
 
 	//getter-Funktion für die Simulation

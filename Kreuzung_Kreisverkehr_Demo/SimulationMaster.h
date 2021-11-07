@@ -17,13 +17,34 @@ public:
 
 	void updateLists();
 
-	void moveAutos(); //soll Autos mit den Funktionen speedUp slowDown etc. bewegen
+	void moveAutos();//soll Autos mit den Funktionen speedUp slowDown etc. bewegen
+	void moveAutosOnKreuzung();
+	void moveAutosVorKreuzung();//für nachher
+	void moveAutosNachKreuzung();
+
 	void allowMovement(); //soll noch vor moveAutos abgefragt werden, und überprüft für jedes Auto, ob zum Beispiel die Ampel rot ist, ein Auto davor ist, oder Abbiegen möglich ist.
+	bool checkAmpelNordSued();//Überprüft, ob die Ampel NordSued grün ist
+	bool checkAmpelOstWest();//""
+	void checkIfInFront();//überprüft, ob sich ein Auto vor demjenigen befindet, dass gerade losfahren soll
+	bool inFront();//speichert für checkIfInFront, ob fahren erlaubt ist
+	//Sollen überprüfen, ob die Kreuzung für die Richtungn im Funktionsnamen frei ist, also ob die Gegenfahrbahn leer ist
+	void checkKreuzungNord_Ost();
+	bool Nord_OstFree;
+	void checkKreuzungSued_West();
+	bool Sued_WestFree;
+	void checkKreuzungWest_Nord();
+	bool West_NordFree;
+	void checkKreuzungOst_Sued();
+	bool Ost_SuedFree;
+
+
 	void spawnAutos(); //setzt Autos "zufällig" in die Vektoren
 	void spawnAutosNord();
 	void spawnAutosSued();
 	void spawnAutosWest();
 	void spawnAutosOst();
+
+	void pushToKreuzung();
 
 
 	SimulationMaster();
@@ -46,7 +67,23 @@ public:
 	std::vector<Autos*> West_Sued1;
 	std::vector<Autos*> West_Nord1;
 
+	//Vectoren/Listen für Autos, die auf die Kreuzung gefahren sind
+	std::vector<Autos*> Nord_West_Kreuzung1;//Nord: Spawn, West: Richtung 
+	std::vector<Autos*> Nord_Ost_Kreuzung1;// Nord: Spawn, Ost: Richtung
+	std::vector<Autos*> Nord_Sued_Kreuzung1;
 
+	std::vector<Autos*> Sued_West_Kreuzung1;
+	std::vector<Autos*> Sued_Ost_Kreuzung1;
+	std::vector<Autos*> Sued_Nord_Kreuzung1;
+
+	std::vector<Autos*> Ost_West_Kreuzung1;
+	std::vector<Autos*> Ost_Sued_Kreuzung1;
+	std::vector<Autos*> Ost_Nord_Kreuzung1;
+
+	std::vector<Autos*> West_Ost_Kreuzung1;
+	std::vector<Autos*> West_Sued_Kreuzung1;
+	std::vector<Autos*> West_Nord_Kreuzung1;
+	
 	//Einfügen der Ampelschaltung
 	Ampel* ampel;
 	void initAmpel();

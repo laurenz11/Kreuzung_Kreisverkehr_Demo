@@ -3,19 +3,22 @@
 
 //Zykluszeiten vorgeben, Anfangsgeschwindigkeit 0, nur wenn Ampel nicht rot ist, wenn linksabbieger fahren wollen , erstmal streckenabschnitt der blockiert laufen lassen
 //Geschwindigkeit die das Auto hat
-Autos::Autos(std::string Spawn, std::string Direction, float Fahrtweg, float ReactionTime) {
+Autos::Autos(std::string Spawn, std::string Direction, float Fahrtweg, float ReactionTime, float FahrtwegOnKreuzung) {
 	beschleunigung = 2;
 	bremsBeschleunigung = -1;
 	spawn = Spawn;
 	direction = Direction;
 	fahrtweg = Fahrtweg;
+	fahrtwegKreuzung = FahrtwegOnKreuzung;
 	internalTimer.restart();
-	anfangsGeschwindigkeit = 8.333; // in meter pro sekunde 
+	anfangsGeschwindigkeit = 0; // in meter pro sekunde 
 	gesamtWeg = 0;
 	wegBefore = 0;
 	weg = 0;
 	reactionTime = ReactionTime;
+
 }
+
 
 Autos::~Autos()
 {
@@ -78,4 +81,20 @@ void Autos::setZeit()
 	zeit = internalTimer.getElapsedTime().asSeconds();
 	//std::cout << "internalTimer: " << zeit << std::endl;
 }
+
+float Autos::getFahrtWeg()
+{
+	return fahrtweg;
+}
+float Autos::getInternalTimer()
+{
+	return internalTimer.getElapsedTime().asSeconds();
+}
+
+float Autos::getReactionTime()
+{
+	return reactionTime;
+}
+
+
 

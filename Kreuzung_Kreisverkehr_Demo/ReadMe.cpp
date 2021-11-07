@@ -62,4 +62,18 @@ Das Auto steht dann nach 8,333 sek.
 
 Wenn das Auto anfährt bräuchte es 17,34 m um auf 30km/h zu beschleunigen.
 Das dauert 4,165 sek.
+
+elemente ubedingt aus den Vektoren löschen, wenn fahrtweg = 0
+
+Bevor die Funktion KeepPace() aufgerufen werden kann, muss folgendes erfolgen:
+der Vektor muss gefüllt werden, dass geschieht wenn die Ampel grün ist, wir lassen erstmal nur 15 Autos pro Vektor zu, danach liegen wir weit außerhalb
+des betracheteten Bereichs und wenn Autos auf der Hauptrichtung abbiegen müssen, müssen alle anderen ohnehin warten
+Das erste Auto wartet dann die Reaktionszeit ab.
+Das zweite Auto wartet dann die erste plus die eigene Reaktionszeit ab und dann wird keepPace() aufgerufen. und so weiter.
+Für die Autos, die nicht direkt rechtsabbiegen, oder geradeaus fahren, muss zunächst geprüft werden, ob die Autos auf der Gegenseite bereits gefahren sind
+(drei vektoren müssen empty sein)
+Dann darf das Auto abbiegen, die nachfolgenen dürfen ihren Fahrtweg auch noch weiter abarbeiten, solangen checkifgreen noch true ist, wenn nordSued und
+ost west gleichzeitig rot sind sollten nur noch die fahren dürfen, die auf der Kreuzung sind. Evtl einen Vektor KreuzungBetreten erstellen, der Autos übernimmt
+die auf der Kreuzung sind. Dann Fahrtweg auf der Kreuzung bestimmen und wenn der abgelaufen ist zurück in einen anderen Vektor tun
+Autos biegen hintereinander ab
 */

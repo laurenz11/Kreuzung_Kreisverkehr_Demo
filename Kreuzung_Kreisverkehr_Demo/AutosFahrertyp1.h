@@ -4,7 +4,7 @@
 class AutosFahrertyp1 : public Autos
 {
 public:
-	AutosFahrertyp1(std::string Spawn, std::string Direction, float Fahrtweg, float ReactionTime) : Autos(Spawn, Direction, Fahrtweg, ReactionTime) {
+	AutosFahrertyp1(std::string Spawn, std::string Direction, float Fahrtweg, float ReactionTime, float FahrtwegOnKreuzung) : Autos(Spawn, Direction, Fahrtweg, ReactionTime, FahrtwegOnKreuzung) {
 		reactionTime = ReactionTime;
 	}
 
