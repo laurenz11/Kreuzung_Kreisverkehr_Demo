@@ -1,9 +1,9 @@
 #include "Autos.h"
 
 
-//Zykluszeiten vorgeben, Anfangsgeschwindigkeit 0, nur wenn ampel nicht rot ist, wenn linksabbieger fahren wollen , erstmal streckenabschnitt der blockiert laufen lassen
-//Geschwindigkeit die das Auto hat 
-Autos::Autos(std::string Spawn, std::string Direction, float Fahrtweg) {
+//Zykluszeiten vorgeben, Anfangsgeschwindigkeit 0, nur wenn Ampel nicht rot ist, wenn linksabbieger fahren wollen , erstmal streckenabschnitt der blockiert laufen lassen
+//Geschwindigkeit die das Auto hat
+Autos::Autos(std::string Spawn, std::string Direction, float Fahrtweg, float ReactionTime) {
 	beschleunigung = 2;
 	bremsBeschleunigung = -1;
 	spawn = Spawn;
@@ -12,8 +12,9 @@ Autos::Autos(std::string Spawn, std::string Direction, float Fahrtweg) {
 	internalTimer.restart();
 	anfangsGeschwindigkeit = 8.333; // in meter pro sekunde 
 	gesamtWeg = 0;
-	wegInterval = 0;
+	wegBefore = 0;
 	weg = 0;
+	reactionTime = ReactionTime;
 }
 
 Autos::~Autos()
@@ -23,14 +24,15 @@ Autos::~Autos()
 void Autos::speedUp()
 {
 	setZeit();
-	if (geschwindigkeit <= 8.333) {
-		wegInterval = weg;
+	geschwindigkeit = beschleunigung * zeit + anfangsGeschwindigkeit; //aus Integral weg
 
-		geschwindigkeit = beschleunigung * zeit + anfangsGeschwindigkeit;//aus Integral weg
-		weg = 0.5 * beschleunigung * (pow(zeit, 2)) + (anfangsGeschwindigkeit * zeit);//aus Integral geschwindigkeit
+	if (geschwindigkeit < 8.333) {
+		wegBefore = weg;
 
-		gesamtWeg = gesamtWeg + weg - wegInterval;
-		fahrtweg = fahrtweg - gesamtWeg;
+		weg = 0.5 * beschleunigung * (pow(zeit, 2)) + (anfangsGeschwindigkeit * zeit); //aus Integral geschwindigkeit
+
+		gesamtWeg = gesamtWeg + weg - wegBefore;
+		fahrtweg = fahrtweg - gesamtWeg + wegBefore;
 	}
 	else
 		keepPace();
@@ -39,24 +41,31 @@ void Autos::speedUp()
 void Autos::slowDown()
 {
 	setZeit();
+	wegBefore = weg;
 	geschwindigkeit = bremsBeschleunigung * zeit + anfangsGeschwindigkeit;
+
 	if (geschwindigkeit >= 0) {
+		wegBefore = weg;
+
 		weg = 0.5 * bremsBeschleunigung * (pow(zeit, 2)) + (anfangsGeschwindigkeit * zeit);
 	}
 	else
 		bremsBeschleunigung = 0;
 
-	gesamtWeg = gesamtWeg + weg;
-	fahrtweg = fahrtweg - gesamtWeg;
+	gesamtWeg = gesamtWeg + weg - wegBefore;
+	fahrtweg = fahrtweg - gesamtWeg + wegBefore;
+	//fahrtweg = fahrtweg - (gesamtWeg + weg - wegBefore) + wegBefore;
 }
 
 void Autos::keepPace()
 {
 	setZeit();
+	wegBefore = weg;
+
 	weg = geschwindigkeit * zeit;
 
-	gesamtWeg = gesamtWeg + weg;
-	fahrtweg = fahrtweg - gesamtWeg;
+	gesamtWeg = gesamtWeg + weg - wegBefore;
+	fahrtweg = fahrtweg - gesamtWeg + wegBefore;
 }
 
 void Autos::newPace()

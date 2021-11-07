@@ -31,6 +31,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="SimulationMaster.h">
+      <Filter>Quelldateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StringConverter.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -54,6 +57,12 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadMe.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StringConverter.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

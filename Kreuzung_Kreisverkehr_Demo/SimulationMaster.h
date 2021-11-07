@@ -15,35 +15,39 @@ public:
 
 	void updateLists();
 
-	void moveAutos();//soll Autos mit den Funktionen speedUp slowDown etc. bewegen
-	void allowMovement();//soll noch vor moveAutos abgefragt werden, und überprüft für jedes Auto, ob zum Beispiel die Ampel rot ist, ein Auto davor ist, oder Abbiegen möglich ist.
-	void spawnAutos();//setzt Autos "zufällig" in die Vektoren
+	void moveAutos(); //soll Autos mit den Funktionen speedUp slowDown etc. bewegen
+	void allowMovement(); //soll noch vor moveAutos abgefragt werden, und überprüft für jedes Auto, ob zum Beispiel die Ampel rot ist, ein Auto davor ist, oder Abbiegen möglich ist.
+	void spawnAutos(); //setzt Autos "zufällig" in die Vektoren
+	void spawnAutosNord();
+	void spawnAutosSued();
+	void spawnAutosWest();
+	void spawnAutosOst();
 
 
 	SimulationMaster();
 	~SimulationMaster();
 
 	//Vectoren/Listen für die Autos, unterteilt nach Fahrertypen, insgesamt 36 Vectoren(für jede Kombi Fahrertyp, Spawn, Richtung)
-	std::vector<AutosFahrertyp1*> Nord_West1;//Nord: Spawn, West: Richtung 
-	std::vector<AutosFahrertyp1*> Nord_Ost1;// Nord: Spawn, Ost: Richtung
-	std::vector<AutosFahrertyp1*> Nord_Sued1;
+	std::vector<Autos*> Nord_West1;//Nord: Spawn, West: Richtung 
+	std::vector<Autos*> Nord_Ost1;// Nord: Spawn, Ost: Richtung
+	std::vector<Autos*> Nord_Sued1;
 
-	std::vector<AutosFahrertyp1*> Sued_West1;
-	std::vector<AutosFahrertyp1*> Sued_Ost1;
-	std::vector<AutosFahrertyp1*> Sued_Nord1;
+	std::vector<Autos*> Sued_West1;
+	std::vector<Autos*> Sued_Ost1;
+	std::vector<Autos*> Sued_Nord1;
 
-	std::vector<AutosFahrertyp1*> Ost_West1;
-	std::vector<AutosFahrertyp1*> Ost_Sued1;
-	std::vector<AutosFahrertyp1*> Ost_Nord1;
+	std::vector<Autos*> Ost_West1;
+	std::vector<Autos*> Ost_Sued1;
+	std::vector<Autos*> Ost_Nord1;
 
-	std::vector<AutosFahrertyp1*> West_Ost1;
-	std::vector<AutosFahrertyp1*> West_Sued1;
-	std::vector<AutosFahrertyp1*> West_Nord1;
+	std::vector<Autos*> West_Ost1;
+	std::vector<Autos*> West_Sued1;
+	std::vector<Autos*> West_Nord1;
 
-	//Vectoren für Fahrertyp2
-	std::vector<AutosFahrertyp2*> Nord_West2;
-	std::vector<AutosFahrertyp2*> Nord_Ost2;
-	std::vector<AutosFahrertyp2*> Nord_Sued2;
+	/*Vectoren für Fahrertyp2
+	std::vector<Autos*> Nord_West2;
+	std::vector<Autos*> Nord_Ost2;
+	std::vector<Autos*> Nord_Sued2;
 
 	std::vector<AutosFahrertyp2*> Sued_West2;
 	std::vector<AutosFahrertyp2*> Sued_Ost2;
@@ -72,7 +76,7 @@ public:
 
 	std::vector<AutosFahrertyp3*> West_Ost3;
 	std::vector<AutosFahrertyp3*> West_Sued3;
-	std::vector<AutosFahrertyp3*> West_Nord3;
+	std::vector<AutosFahrertyp3*> West_Nord3;*/
 
 	//globaler Timer für die Zeitmessung
 	sf::Clock globalTimer;
@@ -99,10 +103,5 @@ private:
 	std::string ost;
 	std::string west;
 	std::string sued;
-
-	
-
-
-
 };
 

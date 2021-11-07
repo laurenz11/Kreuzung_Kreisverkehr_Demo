@@ -151,6 +151,7 @@
     <ClInclude Include="AutosFahrertyp2.h" />
     <ClInclude Include="AutosFahrertyp3.h" />
     <ClInclude Include="SimulationMaster.h" />
+    <ClInclude Include="StringConverter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ampel.cpp" />
@@ -159,7 +160,9 @@
     <ClCompile Include="AutosFahrertyp2.cpp" />
     <ClCompile Include="AutosFahrertyp3.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ReadMe.cpp" />
     <ClCompile Include="SimulationMaster.cpp" />
+    <ClCompile Include="StringConverter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

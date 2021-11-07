@@ -7,7 +7,7 @@
 class Autos
 {
 public:
-	Autos(std::string Spawn, std::string Direction, float Fahrtweg);
+	Autos(std::string Spawn, std::string Direction, float Fahrtweg, float ReactionTime);
 	~Autos();
 
 	//diese Funktionen sollen lediglich den counter(also einfach den fahrtweg) runterzählen
@@ -27,14 +27,14 @@ public:
 protected:
 	std::string spawn;//ort des spawns
 	std::string direction;//Zielrichtung
-	int reactionTime;//Reaktionszeit
+	float reactionTime;//Reaktionszeit
 	float beschleunigung;
 	float bremsBeschleunigung;
 	float anfangsGeschwindigkeit;
 	float geschwindigkeit;
 	float weg;
 	float zeit;
-	float wegInterval;
+	float wegBefore;
 	float gesamtWeg;
 	sf::Clock internalTimer;//wird beim spawn gestartet
 	float fahrtweg;//berechneter Fahrtweg für die einzelnen Fahrtwege
