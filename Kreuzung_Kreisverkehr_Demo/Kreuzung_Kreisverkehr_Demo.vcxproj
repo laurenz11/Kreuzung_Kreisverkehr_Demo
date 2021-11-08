@@ -153,10 +153,11 @@
   <ItemGroup>
     <ClInclude Include="Ampel.h" />
     <ClInclude Include="Autos.h" />
-    <ClInclude Include="AutosFahrertyp1.h" />
-    <ClInclude Include="AutosFahrertyp2.h" />
-    <ClInclude Include="AutosFahrertyp3.h" />
+    <ClInclude Include="Gerade.h" />
     <ClInclude Include="GUI.h" />
+    <ClInclude Include="Kreis.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Simulation.h" />
     <ClInclude Include="SimulationKreisverkehr.h" />
     <ClInclude Include="SimulationMaster.h" />
@@ -165,11 +166,12 @@
   <ItemGroup>
     <ClCompile Include="Ampel.cpp" />
     <ClCompile Include="Autos.cpp" />
-    <ClCompile Include="AutosFahrertyp1.cpp" />
-    <ClCompile Include="AutosFahrertyp2.cpp" />
-    <ClCompile Include="AutosFahrertyp3.cpp" />
+    <ClCompile Include="Gerade.cpp" />
     <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="Kreis.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Point.cpp" />
     <ClCompile Include="ReadMe.cpp" />
     <ClCompile Include="Simulation.cpp" />
     <ClCompile Include="SimulationKreisverkehr.cpp" />

@@ -18,20 +18,8 @@
     <ClInclude Include="Autos.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="AutosFahrertyp1.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="AutosFahrertyp2.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="AutosFahrertyp3.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Ampel.h">
       <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="SimulationMaster.h">
-      <Filter>Quelldateien</Filter>
     </ClInclude>
     <ClInclude Include="StringConverter.h">
       <Filter>Headerdateien</Filter>
@@ -45,18 +33,24 @@
     <ClInclude Include="SimulationKreisverkehr.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Gerade.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Kreis.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulationMaster.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Autos.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="AutosFahrertyp1.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="AutosFahrertyp2.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="AutosFahrertyp3.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Ampel.cpp">
@@ -81,6 +75,18 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="SimulationKreisverkehr.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Gerade.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Kreis.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

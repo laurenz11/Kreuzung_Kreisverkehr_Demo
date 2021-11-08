@@ -7,7 +7,6 @@ SimulationMaster::SimulationMaster()
 
 SimulationMaster::~SimulationMaster()
 {
-
 }
 
 void SimulationMaster::initAmpel()
@@ -41,6 +40,7 @@ void SimulationMaster::moveAutos()
 {
 	moveAutosOnKreuzung();
 }
+
 void SimulationMaster::moveAutosOnKreuzung()
 {
 	if (ampel->NordSuedIsGreen)
@@ -209,8 +209,6 @@ void SimulationMaster::moveAutosOnKreuzungWest()
 	}
 }
 
-
-
 void SimulationMaster::allowMovement()
 {
 	if (!ampel->NordSuedIsGreen && !ampel->OstWestIsGreen && !ampel->toOstWest)
@@ -250,7 +248,6 @@ void SimulationMaster::allowMovementNord()
 					Nord_Kreuzung1.erase(Nord_Kreuzung1.begin() + i);
 				}
 			}
-		
 	}
 }
 
@@ -455,7 +452,7 @@ void SimulationMaster::spawnAutosNordKreuzung()
 		if (randValueType <= 1)
 		{
 			this->Nord_Kreuzung1.push_back(new Autos(nord, ost, 23.142, 0.75, 23.142)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
-			counterNord++;
+			counterNord++;														//hier müssen die Geraden hin anstatt des Fahrtweges.
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{

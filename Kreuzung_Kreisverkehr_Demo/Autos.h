@@ -4,6 +4,11 @@
 #include "SFML/System.hpp"
 #include <math.h>
 #include <iostream>
+#include "Gerade.h"
+//#include "Kreis.h"
+#include "Point.h"
+#include "Autos.h"
+
 class Autos
 {
 public:
@@ -44,10 +49,15 @@ protected:
 	float wegBefore;
 	float gesamtWeg;
 	sf::Clock internalTimer;//wird beim spawn gestartet
-	float fahrtweg;//berechneter Fahrtweg für die einzelnen Fahrtwege, wird während der Simulation weiter runtergezählt
+	float streckenLänge;//berechneter Fahrtweg für die einzelnen Fahrtwege, wird während der Simulation weiter runtergezählt
 	float fahrtwegKreuzung;
 	float originalFahrtweg; //ursprünglicher Fahrtweg, der sich nicht verändert, für den Agleich, ob die Kreuzung erreicht wurde 
 	bool isMoving; //gibt an ob sich das Element bewegt.
 	bool isSlowingDown; //für später, gibt an ob das Element gerade bremst
+
+	Point Auto;//Jedes Auto ist dann ein Punkt auf der Geraden mit einem Kreis mit gegebenen Abstandsradius, der nicht geschnitten werden darf
+	Point spawnAuto; // Punkt, an dem das Auto gespawnt werden soll
+	Gerade fahrtweg; //Geraden, auf dem sich das Auto bewegen soll
+	//Kreis abstandHalter;
 };
 

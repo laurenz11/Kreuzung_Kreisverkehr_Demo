@@ -76,6 +76,4 @@ Dann darf das Auto abbiegen, die nachfolgenen dürfen ihren Fahrtweg auch noch we
 ost west gleichzeitig rot sind sollten nur noch die fahren dürfen, die auf der Kreuzung sind. Evtl einen Vektor KreuzungBetreten erstellen, der Autos übernimmt
 die auf der Kreuzung sind. Dann Fahrtweg auf der Kreuzung bestimmen und wenn der abgelaufen ist zurück in einen anderen Vektor tun
 Autos biegen voreinander ab!!!
-
-
 */

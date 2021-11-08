@@ -8,7 +8,7 @@ Autos::Autos(std::string Spawn, std::string Direction, float Fahrtweg, float Rea
 	bremsBeschleunigung = -1;
 	spawn = Spawn;
 	direction = Direction;
-	fahrtweg = Fahrtweg;
+	streckenLänge = Fahrtweg;
 	originalFahrtweg = Fahrtweg;
 	fahrtwegKreuzung = FahrtwegOnKreuzung;
 	internalTimer.restart();
@@ -25,7 +25,7 @@ Autos::~Autos()
 {
 }
 
-void Autos::speedUp()
+void Autos::speedUp()// weg muss dann im Koordinatensystem entweder das Auto parallel der x-Achse, oder auf der y-Achse verschieben, wenn die Fahrbedingung erüllt ist 
 {
 	setZeit();
 	geschwindigkeit = beschleunigung * zeit + anfangsGeschwindigkeit; //aus Integral weg
@@ -36,7 +36,7 @@ void Autos::speedUp()
 		weg = 0.5 * beschleunigung * (pow(zeit, 2)) + (anfangsGeschwindigkeit * zeit); //aus Integral geschwindigkeit
 
 		gesamtWeg = gesamtWeg + weg - wegBefore;
-		fahrtweg = fahrtweg - gesamtWeg + wegBefore;
+		streckenLänge= streckenLänge - gesamtWeg + wegBefore;
 	}
 	else
 		keepPace();
@@ -57,7 +57,7 @@ void Autos::slowDown()
 		bremsBeschleunigung = 0;
 
 	gesamtWeg = gesamtWeg + weg - wegBefore;
-	fahrtweg = fahrtweg - gesamtWeg + wegBefore;
+	streckenLänge = streckenLänge - gesamtWeg + wegBefore;
 	//fahrtweg = fahrtweg - (gesamtWeg + weg - wegBefore) + wegBefore;
 }
 
@@ -69,7 +69,7 @@ void Autos::keepPace()
 	weg = geschwindigkeit * zeit;
 
 	gesamtWeg = gesamtWeg + weg - wegBefore;
-	fahrtweg = fahrtweg - gesamtWeg + wegBefore;
+	streckenLänge = streckenLänge - gesamtWeg + wegBefore;
 }
 
 void Autos::newPace()
@@ -100,7 +100,7 @@ void Autos::changeIsMoving()
 
 float Autos::getFahrtWeg()
 {
-	return fahrtweg;
+	return streckenLänge;
 }
 
 float Autos::getOriginalFahrtweg()

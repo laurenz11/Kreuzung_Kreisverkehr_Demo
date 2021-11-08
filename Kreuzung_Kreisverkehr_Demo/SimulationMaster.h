@@ -1,7 +1,5 @@
 #pragma once
-#include "AutosFahrertyp1.h"
-#include "AutosFahrertyp2.h"
-#include "AutosFahrertyp3.h"
+#include "Autos.h"
 #include "time.h"
 #include "Ampel.h"
 //Simulation für die Kreuzung
