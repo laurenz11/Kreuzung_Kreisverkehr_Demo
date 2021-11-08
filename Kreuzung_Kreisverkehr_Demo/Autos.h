@@ -19,7 +19,11 @@ public:
 	//float getWeg();//gibt Weg zurück
 	void setZeit();//Setzt die zeit in der Formel mit der abgelaufenen Zeit des internalCounter gleich
 
+	void changeIsMoving();//verändert isMoving, je nachdem ob geschwindigkeit > 0 oder =0 ist
+
 	float getFahrtWeg();
+	float getOriginalFahrtweg();
+	bool getIsMoving();//gibt an ob das Element in Bewegung ist (geschwindigkeit > 0), und kann dann für die checkIfInFront() in SimulationMaster verwendet werden
 	
 
 	float getInternalTimer();
@@ -38,7 +42,10 @@ protected:
 	float wegBefore;
 	float gesamtWeg;
 	sf::Clock internalTimer;//wird beim spawn gestartet
-	float fahrtweg;//berechneter Fahrtweg für die einzelnen Fahrtwege
+	float fahrtweg;//berechneter Fahrtweg für die einzelnen Fahrtwege, wird während der Simulation weiter runtergezählt
 	float fahrtwegKreuzung;
+	float originalFahrtweg; //ursprünglicher Fahrtweg, der sich nicht verändert, für den Agleich, ob die Kreuzung erreicht wurde 
+	bool isMoving; //gibt an ob sich das Element bewegt.
+	bool isSlowingDown; //für später, gibt an ob das Element gerade bremst
 };
 

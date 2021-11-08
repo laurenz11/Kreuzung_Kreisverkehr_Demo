@@ -9,6 +9,7 @@ Autos::Autos(std::string Spawn, std::string Direction, float Fahrtweg, float Rea
 	spawn = Spawn;
 	direction = Direction;
 	fahrtweg = Fahrtweg;
+	originalFahrtweg = Fahrtweg;
 	fahrtwegKreuzung = FahrtwegOnKreuzung;
 	internalTimer.restart();
 	anfangsGeschwindigkeit = 0; // in meter pro sekunde 
@@ -82,10 +83,30 @@ void Autos::setZeit()
 	//std::cout << "internalTimer: " << zeit << std::endl;
 }
 
+void Autos::changeIsMoving()
+{
+	if (geschwindigkeit > 0)
+	{
+		isMoving = true;
+	}
+	else
+		isMoving = false;
+}
+
 float Autos::getFahrtWeg()
 {
 	return fahrtweg;
 }
+float Autos::getOriginalFahrtweg()
+{
+	return originalFahrtweg;
+}
+
+bool Autos::getIsMoving()
+{
+	return getIsMoving;
+}
+
 float Autos::getInternalTimer()
 {
 	return internalTimer.getElapsedTime().asSeconds();

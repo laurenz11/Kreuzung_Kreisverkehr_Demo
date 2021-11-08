@@ -4,7 +4,7 @@
 #include "AutosFahrertyp3.h"
 #include "time.h"
 #include "Ampel.h"
-
+//Simulation für die Kreuzung
 class SimulationMaster
 {
 public: 
@@ -17,16 +17,38 @@ public:
 
 	void updateLists();
 
+	void spawnAutos(); //setzt Autos "zufällig" in die Vektoren
+	
+	//Spawt Autos auf der Kreuzung, ist erstmal ausreichend ohne grafische Darstellung
+	void spawnAutosNordKreuzung();
+	void spawnAutosSuedKreuzung();
+	void spawnAutosWestKreuzung();
+	void spawnAutosOstKreuzung();
+
+	//spawnt Autos 40m vor der Ampel, ist erstmal uninteressant, weil die Autos zunächst auf der Kreuzung spawnen sollen
+	void spawnAutosNord();
+	void spawnAutosSued();
+	void spawnAutosWest();
+	void spawnAutosOst();
+	
+	//Für später, wenn die Autos nicht mehr direkt an der Kreuzung starten, sondern einen Anfahrtweg haben
+	void pushToKreuzungNord();
+	void pushToKreuzungOst();
+	void pushToKreuzungWest();
+	void pushToKreuzungSued();
+
+
 	void moveAutos();//soll Autos mit den Funktionen speedUp slowDown etc. bewegen
 	void moveAutosOnKreuzung();
 	void moveAutosVorKreuzung();//für nachher
-	void moveAutosNachKreuzung();
+	//void moveAutosNachKreuzung();//für nachher
 
 	void allowMovement(); //soll noch vor moveAutos abgefragt werden, und überprüft für jedes Auto, ob zum Beispiel die Ampel rot ist, ein Auto davor ist, oder Abbiegen möglich ist.
-	bool checkAmpelNordSued();//Überprüft, ob die Ampel NordSued grün ist
-	bool checkAmpelOstWest();//""
+
 	void checkIfInFront();//überprüft, ob sich ein Auto vor demjenigen befindet, dass gerade losfahren soll
-	bool inFront();//speichert für checkIfInFront, ob fahren erlaubt ist
+	bool inFront;//speichert für checkIfInFront, ob fahren erlaubt ist
+
+
 	//Sollen überprüfen, ob die Kreuzung für die Richtungn im Funktionsnamen frei ist, also ob die Gegenfahrbahn leer ist
 	void checkKreuzungNord_Ost();
 	bool Nord_OstFree;
@@ -38,13 +60,7 @@ public:
 	bool Ost_SuedFree;
 
 
-	void spawnAutos(); //setzt Autos "zufällig" in die Vektoren
-	void spawnAutosNord();
-	void spawnAutosSued();
-	void spawnAutosWest();
-	void spawnAutosOst();
-
-	void pushToKreuzung();
+	
 
 
 	SimulationMaster();
@@ -67,6 +83,7 @@ public:
 	std::vector<Autos*> West_Sued1;
 	std::vector<Autos*> West_Nord1;
 
+	//Vectorn/Listen für die Autos, 
 	//Vectoren/Listen für Autos, die auf die Kreuzung gefahren sind
 	std::vector<Autos*> Nord_West_Kreuzung1;//Nord: Spawn, West: Richtung 
 	std::vector<Autos*> Nord_Ost_Kreuzung1;// Nord: Spawn, Ost: Richtung
@@ -147,5 +164,7 @@ private:
 	std::string ost;
 	std::string west;
 	std::string sued;
+
+	int sizeOfVector(std::vector < Autos*> vec_1, std::vector < Autos*> vec_2, std::vector < Autos*> vec_3);//Berechnet Anzahl an Elementen die in einer Richtung spawnen
 };
 
