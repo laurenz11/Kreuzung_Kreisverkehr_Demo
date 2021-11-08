@@ -38,14 +38,29 @@ public:
 	void pushToKreuzungSued();
 
 
-	void moveAutos();//soll Autos mit den Funktionen speedUp slowDown etc. bewegen
+	void moveAutos();//soll Autos, die in den Move-Vektoren sind bewegen.
 	void moveAutosOnKreuzung();
+	void moveAutosOnKreuzungNord();
+	void moveAutosOnKreuzungSued();
+	void moveAutosOnKreuzungOst();
+	void moveAutosOnKreuzungWest();
+
+
 	void moveAutosVorKreuzung();//für nachher
 	//void moveAutosNachKreuzung();//für nachher
 
 	void allowMovement(); //soll noch vor moveAutos abgefragt werden, und überprüft für jedes Auto, ob zum Beispiel die Ampel rot ist, ein Auto davor ist, oder Abbiegen möglich ist.
+	void allowMovementNord();
+	void allowMovementSued();
+	void allowMovementWest();
+	void allowMovementOst();
 
 	void checkIfInFront();//überprüft, ob sich ein Auto vor demjenigen befindet, dass gerade losfahren soll
+	void checkIfInFrontNord();
+	void checkIfInFrontSued();
+	void checkIfInFrontOst();
+	void checkIfInFrontWest();
+
 	bool inFront;//speichert für checkIfInFront, ob fahren erlaubt ist
 
 
@@ -85,22 +100,34 @@ public:
 
 	//Vectorn/Listen für die Autos, 
 	//Vectoren/Listen für Autos, die auf die Kreuzung gefahren sind
-	std::vector<Autos*> Nord_West_Kreuzung1;//Nord: Spawn, West: Richtung 
-	std::vector<Autos*> Nord_Ost_Kreuzung1;// Nord: Spawn, Ost: Richtung
-	std::vector<Autos*> Nord_Sued_Kreuzung1;
+	std::vector<Autos*> Nord_Kreuzung1;//Nord: Spawn, West: Richtung 
 
-	std::vector<Autos*> Sued_West_Kreuzung1;
-	std::vector<Autos*> Sued_Ost_Kreuzung1;
-	std::vector<Autos*> Sued_Nord_Kreuzung1;
+	std::vector<Autos*> Sued_Kreuzung1;
 
-	std::vector<Autos*> Ost_West_Kreuzung1;
-	std::vector<Autos*> Ost_Sued_Kreuzung1;
-	std::vector<Autos*> Ost_Nord_Kreuzung1;
+	std::vector<Autos*> Ost_Kreuzung1;
 
-	std::vector<Autos*> West_Ost_Kreuzung1;
-	std::vector<Autos*> West_Sued_Kreuzung1;
-	std::vector<Autos*> West_Nord_Kreuzung1;
+	std::vector<Autos*> West_Kreuzung1;
 	
+
+	//Vectoren/Listen, für die Autos, die freie Fahrt haben
+	std::vector<Autos*> Nord_West_Move1;//Nord: Spawn, West: Richtung 
+	std::vector<Autos*> Nord_Ost_Move1;// Nord: Spawn, Ost: Richtung
+	std::vector<Autos*> Nord_Sued_Move1;
+
+	std::vector<Autos*> Sued_West_Move1;
+	std::vector<Autos*> Sued_Ost_Move1;
+	std::vector<Autos*> Sued_Nord_Move1;
+
+	std::vector<Autos*> Ost_West_Move1;
+	std::vector<Autos*> Ost_Sued_Move1;
+	std::vector<Autos*> Ost_Nord_Move1;
+
+	std::vector<Autos*> West_Ost_Move1;
+	std::vector<Autos*> West_Sued_Move1;
+	std::vector<Autos*> West_Nord_Move1;
+
+
+
 	//Einfügen der Ampelschaltung
 	Ampel* ampel;
 	void initAmpel();
@@ -165,6 +192,6 @@ private:
 	std::string west;
 	std::string sued;
 
-	int sizeOfVector(std::vector < Autos*> vec_1, std::vector < Autos*> vec_2, std::vector < Autos*> vec_3);//Berechnet Anzahl an Elementen die in einer Richtung spawnen
+	int sizeOfVector(std::vector < Autos*> vec_1);//Berechnet Anzahl an Elementen die in einer Richtung spawnen
 };
 

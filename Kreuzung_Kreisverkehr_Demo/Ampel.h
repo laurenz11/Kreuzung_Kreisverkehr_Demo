@@ -20,6 +20,10 @@ public :
 
 	//Schaltet Ampel weiter
 	void cycleAmpel();
+	int ampelZyklusCounter;
+
+	//Zeigt an wohin geschaltet wird
+	bool toOstWest;
 
 	//getter-Funktion für die Simulation
 	bool checkIfGreenNordSued();

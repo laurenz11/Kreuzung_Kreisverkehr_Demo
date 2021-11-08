@@ -77,6 +77,11 @@ void Autos::newPace()
 	anfangsGeschwindigkeit = geschwindigkeit;
 }
 
+void Autos::stop()
+{
+	geschwindigkeit = 0;
+}
+
 void Autos::setZeit()
 {
 	zeit = internalTimer.getElapsedTime().asSeconds();
@@ -97,6 +102,7 @@ float Autos::getFahrtWeg()
 {
 	return fahrtweg;
 }
+
 float Autos::getOriginalFahrtweg()
 {
 	return originalFahrtweg;
@@ -104,7 +110,7 @@ float Autos::getOriginalFahrtweg()
 
 bool Autos::getIsMoving()
 {
-	return getIsMoving;
+	return isMoving;
 }
 
 float Autos::getInternalTimer()
@@ -115,6 +121,11 @@ float Autos::getInternalTimer()
 float Autos::getReactionTime()
 {
 	return reactionTime;
+}
+
+std::string Autos::getDirection()
+{
+	return direction;
 }
 
 

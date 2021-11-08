@@ -75,5 +75,7 @@ Für die Autos, die nicht direkt rechtsabbiegen, oder geradeaus fahren, muss zunä
 Dann darf das Auto abbiegen, die nachfolgenen dürfen ihren Fahrtweg auch noch weiter abarbeiten, solangen checkifgreen noch true ist, wenn nordSued und
 ost west gleichzeitig rot sind sollten nur noch die fahren dürfen, die auf der Kreuzung sind. Evtl einen Vektor KreuzungBetreten erstellen, der Autos übernimmt
 die auf der Kreuzung sind. Dann Fahrtweg auf der Kreuzung bestimmen und wenn der abgelaufen ist zurück in einen anderen Vektor tun
-Autos biegen hintereinander ab
+Autos biegen voreinander ab!!!
+
+
 */

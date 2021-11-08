@@ -15,6 +15,7 @@ public:
 	void slowDown();//Bremsen, runterzählen nicht konstant, "Rückwärtsfahren" also counter fahrtweg hochzählen verhindern
 	void keepPace();//Geschwindigkeit halten, konstant runterzählen mit geschwindigkeit*zeit
 	void newPace();
+	void stop();//Für den Anfang erstmal einfacher
 	//float getPace();//gibt Geschwindigkeit zurück
 	//float getWeg();//gibt Weg zurück
 	void setZeit();//Setzt die zeit in der Formel mit der abgelaufenen Zeit des internalCounter gleich
@@ -25,9 +26,10 @@ public:
 	float getOriginalFahrtweg();
 	bool getIsMoving();//gibt an ob das Element in Bewegung ist (geschwindigkeit > 0), und kann dann für die checkIfInFront() in SimulationMaster verwendet werden
 	
-
 	float getInternalTimer();
 	float getReactionTime();
+
+	std::string getDirection();
 
 protected:
 	std::string spawn;//ort des spawns

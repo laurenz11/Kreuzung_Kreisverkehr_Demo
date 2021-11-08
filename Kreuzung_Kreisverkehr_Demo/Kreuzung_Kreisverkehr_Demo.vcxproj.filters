@@ -36,6 +36,15 @@
     <ClInclude Include="StringConverter.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="GUI.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulationKreisverkehr.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Autos.cpp">
@@ -63,6 +72,15 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="StringConverter.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulationKreisverkehr.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
