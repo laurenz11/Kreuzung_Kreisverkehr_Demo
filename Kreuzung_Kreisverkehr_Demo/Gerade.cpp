@@ -30,6 +30,11 @@ Gerade::~Gerade()
 	 PointOnGerade.setPoint(f, Y);
  }
 
+ void Gerade::movePointOnGeradeX(Point PointOnGerade, float X)
+ {
+	 PointOnGerade.movePoint(X, m * X + b);
+ }
+
  void Gerade::setGerade(Point point1, Point point2)
  {
 	 if (point1.x - point2.x == 0)
@@ -40,8 +45,7 @@ Gerade::~Gerade()
 	 }
 	 else
 	 {
-		 m = (point2.getY() - point1.getY()) / (point2.getX() - point1.getY());
+		 m = (point2.getY() - point1.getY()) / (point2.getX() - point1.getX());
 		 b = point1.getY() - m * point1.getX();
-		 f = -(b / m);
 	 }
  }

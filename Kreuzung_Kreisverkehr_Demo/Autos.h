@@ -5,15 +5,19 @@
 #include <math.h>
 #include <iostream>
 #include "Gerade.h"
-//#include "Kreis.h"
+#include "Kreis.h"
 #include "Point.h"
 #include "Autos.h"
+#include "Map.h"
 
 class Autos
 {
 public:
-	Autos(std::string Spawn, std::string Direction, float Fahrtweg, float ReactionTime, float FahrtwegOnKreuzung);
+	Autos(float x, float y, std::string Direction, Gerade g, float ReactionTime, float r);
 	~Autos();
+
+	Map kreuzung;
+	void initKreuzung();
 
 	//diese Funktionen sollen lediglich den counter(also einfach den fahrtweg) runterzählen
 	void speedUp();//Beschleunigung, runterzählen nicht konstant
@@ -28,8 +32,8 @@ public:
 	void changeIsMoving();//verändert isMoving, je nachdem ob geschwindigkeit > 0 oder =0 ist
 
 	float getFahrtWeg();
-	float getOriginalFahrtweg();
-	bool getIsMoving();//gibt an ob das Element in Bewegung ist (geschwindigkeit > 0), und kann dann für die checkIfInFront() in SimulationMaster verwendet werden
+	//float getOriginalFahrtweg();
+	//bool getIsMoving();//gibt an ob das Element in Bewegung ist (geschwindigkeit > 0), und kann dann für die checkIfInFront() in SimulationMaster verwendet werden
 	
 	float getInternalTimer();
 	float getReactionTime();
@@ -37,7 +41,7 @@ public:
 	std::string getDirection();
 
 protected:
-	std::string spawn;//ort des spawns
+	//std::string spawn;//ort des spawns
 	std::string direction;//Zielrichtung
 	float reactionTime;//Reaktionszeit
 	float beschleunigung;
@@ -52,12 +56,12 @@ protected:
 	float streckenLänge;//berechneter Fahrtweg für die einzelnen Fahrtwege, wird während der Simulation weiter runtergezählt
 	float fahrtwegKreuzung;
 	float originalFahrtweg; //ursprünglicher Fahrtweg, der sich nicht verändert, für den Agleich, ob die Kreuzung erreicht wurde 
-	bool isMoving; //gibt an ob sich das Element bewegt.
-	bool isSlowingDown; //für später, gibt an ob das Element gerade bremst
+	//bool isMoving; //gibt an ob sich das Element bewegt.
+	//bool isSlowingDown; //für später, gibt an ob das Element gerade bremst
 
 	Point Auto;//Jedes Auto ist dann ein Punkt auf der Geraden mit einem Kreis mit gegebenen Abstandsradius, der nicht geschnitten werden darf
 	Point spawnAuto; // Punkt, an dem das Auto gespawnt werden soll
 	Gerade fahrtweg; //Geraden, auf dem sich das Auto bewegen soll
-	//Kreis abstandHalter;
+	Kreis abstandHalter;
 };
 
