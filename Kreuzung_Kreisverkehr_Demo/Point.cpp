@@ -1,21 +1,12 @@
 #include "Point.h"
-Point::Point()
+Point::Point(float X, float Y)
 {
-	
+	 x = X;
+	 y = Y;
 }
 
-void Point::setPoint(float X, float Y)
-{
-	x = X;
-	y = Y;
 
-}
 
-void Point::movePoint(float X, float Y)
-{
-	x = X; 
-	y = Y;
-}
 
 float Point::getX()
 {

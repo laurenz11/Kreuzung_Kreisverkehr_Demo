@@ -163,6 +163,7 @@
     <ClInclude Include="Simulation.h" />
     <ClInclude Include="SimulationKreisverkehr.h" />
     <ClInclude Include="SimulationMaster.h" />
+    <ClInclude Include="Strecken.h" />
     <ClInclude Include="StringConverter.h" />
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +181,7 @@
     <ClCompile Include="Simulation.cpp" />
     <ClCompile Include="SimulationKreisverkehr.cpp" />
     <ClCompile Include="SimulationMaster.cpp" />
+    <ClCompile Include="Strecken.cpp" />
     <ClCompile Include="StringConverter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -30,31 +30,11 @@ public:
 	void moveAutosOst();
 	void moveAutosWest();
 
-
-	void moveAutosVorKreuzung();//für nachher
-	//void moveAutosNachKreuzung();//für nachher
-
-	void allowMovement(); //soll noch vor moveAutos abgefragt werden, und überprüft für jedes Auto, ob zum Beispiel die Ampel rot ist, ein Auto davor ist, oder Abbiegen möglich ist.
-	void allowMovementNord();
-	void allowMovementSued();
-	void allowMovementWest();
-	void allowMovementOst();
+	void allowMovement();
 
 
 
 	bool inFront;//speichert für checkIfInFront, ob fahren erlaubt ist
-
-
-	//Sollen überprüfen, ob die Kreuzung für die Richtungn im Funktionsnamen frei ist, also ob die Gegenfahrbahn leer ist
-	void checkKreuzungNord_Ost();
-	bool Nord_OstFree;
-	void checkKreuzungSued_West();
-	bool Sued_WestFree;
-	void checkKreuzungWest_Nord();
-	bool West_NordFree;
-	void checkKreuzungOst_Sued();
-	bool Ost_SuedFree;
-
 
 	
 
@@ -62,24 +42,7 @@ public:
 	SimulationMaster();
 	~SimulationMaster();
 
-	//Vectoren/Listen für die Autos, unterteilt nach Fahrertypen, insgesamt 36 Vectoren(für jede Kombi Fahrertyp, Spawn, Richtung)
-	std::vector<Autos*> Nord_West1;//Nord: Spawn, West: Richtung 
-	std::vector<Autos*> Nord_Ost1;// Nord: Spawn, Ost: Richtung
-	std::vector<Autos*> Nord_Sued1;
-
-	std::vector<Autos*> Sued_West1;
-	std::vector<Autos*> Sued_Ost1;
-	std::vector<Autos*> Sued_Nord1;
-
-	std::vector<Autos*> Ost_West1;
-	std::vector<Autos*> Ost_Sued1;
-	std::vector<Autos*> Ost_Nord1;
-
-	std::vector<Autos*> West_Ost1;
-	std::vector<Autos*> West_Sued1;
-	std::vector<Autos*> West_Nord1;
-
-	//Vectorn/Listen für die Autos, 
+	//Vectoren/Listen für die Autos, 
 	//Vectoren/Listen für Autos, die auf die Kreuzung gefahren sind
 	std::vector<Autos*> Nord_Kreuzung1;//Nord: Spawn, West: Richtung 
 

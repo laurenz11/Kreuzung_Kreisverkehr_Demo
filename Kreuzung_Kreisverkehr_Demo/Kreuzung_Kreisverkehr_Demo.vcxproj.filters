@@ -54,6 +54,9 @@
     <ClInclude Include="CarProp.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Strecken.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Autos.cpp">
@@ -99,6 +102,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="CarProp.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Strecken.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

@@ -19,6 +19,13 @@ public:
 	Map kreuzung;
 	void initKreuzung();
 
+
+	Point Auto;//Jedes Auto ist dann ein Punkt auf der Geraden mit einem Kreis mit gegebenen Abstandsradius, der nicht geschnitten werden darf
+	Gerade fahrtwegBeginn; //Geraden, auf dem sich das Auto bewegen soll
+	Gerade fahrtwegWechsel;//Gerade auf die das Auto dann wechseln soll
+	Kreis abstandHalter;
+
+
 	//diese Funktionen sollen lediglich den counter(also einfach den fahrtweg) runterzählen
 	void speedUp();//Beschleunigung, runterzählen nicht konstant
 	void slowDown();//Bremsen, runterzählen nicht konstant, "Rückwärtsfahren" also counter fahrtweg hochzählen verhindern
@@ -37,14 +44,11 @@ public:
 	float getY();
 	
 	void moveOnGerade();
-	void moveOnGerade();
-
-	std::string getDirection();
 
 protected:
-	//std::string spawn;//ort des spawns
-	std::string direction;//Zielrichtung
-	float reactionTime;//Reaktionszeit
+	//std::string spawn ;//ort des spawns
+	std::string direction; //Zielrichtung
+	float reactionTime; //Reaktionszeit
 	float beschleunigung;
 	float bremsBeschleunigung;
 	float anfangsGeschwindigkeit;
@@ -55,14 +59,10 @@ protected:
 	float gesamtWeg;
 	sf::Clock internalTimer;//wird beim spawn gestartet
 	float streckenLänge;//berechneter Fahrtweg für die einzelnen Fahrtwege, wird während der Simulation weiter runtergezählt
-	float fahrtwegKreuzung;
 	float originalFahrtweg; //ursprünglicher Fahrtweg, der sich nicht verändert, für den Agleich, ob die Kreuzung erreicht wurde 
 	//bool isMoving; //gibt an ob sich das Element bewegt.
 	//bool isSlowingDown; //für später, gibt an ob das Element gerade bremst
 
-	Point Auto;//Jedes Auto ist dann ein Punkt auf der Geraden mit einem Kreis mit gegebenen Abstandsradius, der nicht geschnitten werden darf
-	Gerade fahrtwegBeginn; //Geraden, auf dem sich das Auto bewegen soll
-	Gerade fahrtwegWechsel;//Gerade auf die das Auto dann wechseln soll
-	Kreis abstandHalter;
+	
 };
 
