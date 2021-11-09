@@ -12,7 +12,7 @@
 class Autos
 {
 public:
-	Autos(std::string Spawn, std::string Direction, float Fahrtweg, float ReactionTime, float FahrtwegOnKreuzung);
+	Autos( Spawn, std::string Direction, float Fahrtweg, float ReactionTime, float FahrtwegOnKreuzung);
 	~Autos();
 
 	//diese Funktionen sollen lediglich den counter(also einfach den fahrtweg) runterzählen
@@ -52,8 +52,8 @@ protected:
 	float streckenLänge;//berechneter Fahrtweg für die einzelnen Fahrtwege, wird während der Simulation weiter runtergezählt
 	float fahrtwegKreuzung;
 	float originalFahrtweg; //ursprünglicher Fahrtweg, der sich nicht verändert, für den Agleich, ob die Kreuzung erreicht wurde 
-	bool isMoving; //gibt an ob sich das Element bewegt.
-	bool isSlowingDown; //für später, gibt an ob das Element gerade bremst
+	//bool isMoving; //gibt an ob sich das Element bewegt.
+	//bool isSlowingDown; //für später, gibt an ob das Element gerade bremst
 
 	Point Auto;//Jedes Auto ist dann ein Punkt auf der Geraden mit einem Kreis mit gegebenen Abstandsradius, der nicht geschnitten werden darf
 	Point spawnAuto; // Punkt, an dem das Auto gespawnt werden soll

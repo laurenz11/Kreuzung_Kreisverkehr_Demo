@@ -5,12 +5,13 @@ class Kreis
 {
 public :
 
-	Kreis(float R, float x, float y);
+	Kreis();
 	~Kreis();
-
 	float r;
+	float x;
+	float y;
 	Point center;
-	void setKreis();
+	void setKreis(float R, Point Center);
 
 
 };

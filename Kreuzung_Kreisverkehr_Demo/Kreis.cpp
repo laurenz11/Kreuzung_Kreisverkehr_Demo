@@ -1,9 +1,9 @@
 #include "Kreis.h"
 
-Kreis::Kreis(float R, float x, float y)
+Kreis::Kreis()
 {
-	r = R;
-	center.setPoint(x, y);
+	
+	
 }
 
 Kreis::~Kreis()
@@ -11,6 +11,9 @@ Kreis::~Kreis()
 
 }
 
-void Kreis::setKreis()
+void Kreis::setKreis(float R, Point Center)
 {
+	r = R;
+	x = sqrt(pow(r, 2) - pow(y - center.getY(), 2)) - center.getX();
+	y = sqrt(pow(r, 2) - pow(x - center.getX(), 2)) - center.getY();
 }

@@ -2,7 +2,7 @@
 Point::Point()
 {
 	x;
-	y;
+	y
 }
 
 void Point::setPoint(float X, float Y)
