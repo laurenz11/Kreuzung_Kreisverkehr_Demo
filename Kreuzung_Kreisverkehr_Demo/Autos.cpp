@@ -8,7 +8,7 @@ Autos::Autos(float x, float y, std::string Direction, Gerade g, float ReactionTi
 	bremsBeschleunigung = -2;
 	fahrtweg = g;
 	direction = Direction;
-	Auto->setPoint(x, y);
+	Auto.setPoint(x, y);
 	internalTimer.restart();
 	anfangsGeschwindigkeit = 0; // in meter pro sekunde 
 	gesamtWeg = 0;

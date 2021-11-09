@@ -431,7 +431,7 @@ void SimulationMaster::spawnAutosNordKreuzung()
 	{
 		if (randValueType <= 1)
 		{
-			this->Nord_Kreuzung1.push_back(new Autos(2, -8, ost, a, 0.75, 2.5 )); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->Nord_Kreuzung1.push_back(new Autos(2, -8, ost, Map::a, 0.75, 2.5 )); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 			counterNord++;														//hier müssen die Geraden hin anstatt des Fahrtweges.
 		}
 		else if (randValueType >= 2 && randValueType < 9)
