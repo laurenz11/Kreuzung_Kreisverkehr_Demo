@@ -9,11 +9,11 @@
 #include "Point.h"
 #include "Autos.h"
 #include "Map.h"
-
+#include "CarProp.h"
 class Autos
 {
 public:
-	Autos(float x, float y, std::string Direction, Gerade g, float ReactionTime, float r);
+	Autos(float x, float y, Spawnpoint spawn , std::string Direction, Gerade g, float ReactionTime, float r);
 	~Autos();
 
 	Map kreuzung;
@@ -29,14 +29,15 @@ public:
 	//float getWeg();//gibt Weg zurück
 	void setZeit();//Setzt die zeit in der Formel mit der abgelaufenen Zeit des internalCounter gleich
 
-	void changeIsMoving();//verändert isMoving, je nachdem ob geschwindigkeit > 0 oder =0 ist
-
 	float getFahrtWeg();
-	//float getOriginalFahrtweg();
-	//bool getIsMoving();//gibt an ob das Element in Bewegung ist (geschwindigkeit > 0), und kann dann für die checkIfInFront() in SimulationMaster verwendet werden
 	
 	float getInternalTimer();
 	float getReactionTime();
+	float getX();
+	float getY();
+	
+	void moveOnGerade();
+	void moveOnGerade();
 
 	std::string getDirection();
 
@@ -59,8 +60,9 @@ protected:
 	//bool isMoving; //gibt an ob sich das Element bewegt.
 	//bool isSlowingDown; //für später, gibt an ob das Element gerade bremst
 
-	Point* Auto;//Jedes Auto ist dann ein Punkt auf der Geraden mit einem Kreis mit gegebenen Abstandsradius, der nicht geschnitten werden darf
-	Gerade fahrtweg; //Geraden, auf dem sich das Auto bewegen soll
-	Kreis* abstandHalter;
+	Point Auto;//Jedes Auto ist dann ein Punkt auf der Geraden mit einem Kreis mit gegebenen Abstandsradius, der nicht geschnitten werden darf
+	Gerade fahrtwegBeginn; //Geraden, auf dem sich das Auto bewegen soll
+	Gerade fahrtwegWechsel;//Gerade auf die das Auto dann wechseln soll
+	Kreis abstandHalter;
 };
 

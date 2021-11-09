@@ -111,6 +111,7 @@ public:
 
 	//Einfügen der Ampelschaltung
 	Ampel* ampel;
+	
 	void initAmpel();
 
 	//globaler Timer für die Zeitmessung

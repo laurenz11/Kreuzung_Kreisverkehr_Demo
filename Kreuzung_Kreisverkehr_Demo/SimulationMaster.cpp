@@ -57,154 +57,63 @@ void SimulationMaster::moveAutosOnKreuzung()
 
 void SimulationMaster::moveAutosNord()
 {
-	for (int i = 0; i < Nord_Sued_Move1.size(); i++)
+	for (int i = 0; i < Nord_Kreuzung1.size(); i++)
 	{
-		if (Nord_Sued_Move1[i]->getFahrtWeg() )
+		if (Nord_Kreuzung1[i]->getY() >= 2) 
 		{
-			Nord_Sued_Move1[i]->speedUp();
+			
+			
 		}
-		else
-		{
-			Nord_Sued_Move1.erase(Nord_Sued_Move1.begin() + i);
+
+
+			
+	
+			Nord_Kreuzung1.erase(Nord_Kreuzung1.begin() + i);
 			counterOutSued++;
-		}
-	}
-	for (int i = 0; i < Nord_West_Move1.size(); i++)
-	{
-		if (Nord_West_Move1[i]->getFahrtWeg() >= 0)
-		{
-			Nord_West_Move1[i]->speedUp();
-		}
-		else
-		{
-			Nord_West_Move1.erase(Nord_West_Move1.begin() + i); 
-		}
-	}
-	for (int i = 0; i < Nord_Ost_Move1.size(); i++)
-	{
-		if (Nord_Ost_Move1[i]->getFahrtWeg() >= 0)
-		{
-			Nord_Ost_Move1[i]->speedUp();
-		}
-		else
-		{
-			Nord_Ost_Move1.erase(Nord_Ost_Move1.begin() + i);
-			counterOutOst++;
-		}
 	}
 }
 
 void SimulationMaster::moveAutosSued()
 {
-	for (int i = 0; i < Sued_Nord_Move1.size(); i++)
+	for (int i = 0; i < Sued_Kreuzung1.size(); i++)
 	{
-		if (Sued_Nord_Move1[i]->getFahrtWeg() >= 0)
+		if (Sued_Kreuzung1[i]->getFahrtWeg() >= 0)
 		{
-			Sued_Nord_Move1[i]->speedUp();
+			Sued_Kreuzung1[i]->speedUp();
 		}
 		else
 		{
-			Sued_Nord_Move1.erase(Sued_Nord_Move1.begin() + i);
-		}
-	}
-	for (int i = 0; i < Sued_West_Move1.size(); i++)
-	{
-		if (Sued_West_Move1[i]->getFahrtWeg() >= 0)
-		{
-			Sued_West_Move1[i]->speedUp();
-		}
-		else
-		{
-			Sued_West_Move1.erase(Sued_West_Move1.begin() + i);
-		}
-	}
-	for (int i = 0; i < Sued_Ost_Move1.size(); i++)
-	{
-		if (Sued_Ost_Move1[i]->getFahrtWeg() >= 0)
-		{
-			Sued_Ost_Move1[i]->speedUp();
-		}
-		else
-		{
-			Sued_Ost_Move1.erase(Sued_Ost_Move1.begin() + i);
-			counterOutOst++;
+			Sued_Kreuzung1.erase(Sued_Kreuzung1.begin() + i);
 		}
 	}
 }
 
 void SimulationMaster::moveAutosOst()
 {
-	for (int i = 0; i < Ost_Nord_Move1.size(); i++)
+	for (int i = 0; i < Ost_Kreuzung1.size(); i++)
 	{
-		if (Ost_Nord_Move1[i]->getFahrtWeg() >= 0)
+		if (Ost_Kreuzung1[i]->getFahrtWeg() >= 0)
 		{
-			Ost_Nord_Move1[i]->speedUp();
+			Ost_Kreuzung1[i]->speedUp();
 		}
 		else
 		{
-			Ost_Nord_Move1.erase(Ost_Nord_Move1.begin() + i);
-		}
-	}
-	for (int i = 0; i < Ost_West_Move1.size(); i++)
-	{
-		if (Ost_West_Move1[i]->getFahrtWeg() >= 0)
-		{
-			Ost_West_Move1[i]->speedUp();
-		}
-		else
-		{
-			Ost_West_Move1.erase(Ost_West_Move1.begin() + i);
-		}
-	}
-	for (int i = 0; i < Ost_Sued_Move1.size(); i++)
-	{
-		if (Ost_Sued_Move1[i]->getFahrtWeg() >= 0)
-		{
-			Ost_Sued_Move1[i]->speedUp();
-		}
-		else
-		{
-			Ost_Sued_Move1.erase(Ost_Sued_Move1.begin() + i);
-			counterOutSued++;
+			Ost_Kreuzung1.erase(Ost_Kreuzung1.begin() + i);
 		}
 	}
 }
 
 void SimulationMaster::moveAutosWest()
 {
-	for (int i = 0; i < West_Nord_Move1.size(); i++)
+	for (int i = 0; i < West_Kreuzung1.size(); i++)
 	{
-		if (West_Nord_Move1[i]->getFahrtWeg() >= 0)
+		if (West_Kreuzung1[i]->getFahrtWeg() >= 0)
 		{
-			West_Nord_Move1[i]->speedUp();
+			West_Kreuzung1[i]->speedUp();
 		}
 		else
 		{
-			West_Nord_Move1.erase(West_Nord_Move1.begin() + i);
-		}
-	}
-	for (int i = 0; i < West_Ost_Move1.size(); i++)
-	{
-		if (West_Ost_Move1[i]->getFahrtWeg() >= 0)
-		{
-			West_Ost_Move1[i]->speedUp();
-		}
-		else
-		{
-			West_Ost_Move1.erase(West_Ost_Move1.begin() + i);
-			counterOutOst++;
-		}
-	}
-	for (int i = 0; i < West_Sued_Move1.size(); i++)
-	{
-		if (West_Sued_Move1[i]->getFahrtWeg() >= 0)
-		{
-			West_Sued_Move1[i]->speedUp();
-		}
-		else
-		{
-			West_Sued_Move1.erase(West_Sued_Move1.begin() + i);
-			counterOutSued++;
+			West_Kreuzung1.erase(West_Kreuzung1.begin() + i);
 		}
 	}
 }
@@ -375,51 +284,10 @@ int SimulationMaster::sizeOfVector(std::vector<Autos*> vec_1)
 
 
 
-void SimulationMaster::checkKreuzungNord_Ost()
-{
-	if (Sued_Nord_Move1.empty() && Sued_Ost_Move1.empty())
-	{
-		Nord_OstFree = true;
-	}
-	else
-		Nord_OstFree = false;
-}
-
-void SimulationMaster::checkKreuzungSued_West()
-{
-	if (Nord_Sued_Move1.empty() && Nord_West_Move1.empty())
-	{
-		Sued_WestFree = true;
-	}
-	else
-		Sued_WestFree = false;
-}
-
-void SimulationMaster::checkKreuzungWest_Nord()
-{
-	if (Ost_West_Move1.empty() && Ost_Nord_Move1.empty())
-	{
-		West_NordFree = true;
-	}
-	else
-		West_NordFree = false;
-}
-
-void SimulationMaster::checkKreuzungOst_Sued()
-{
-	if (West_Ost_Move1.empty() && West_Sued_Move1.empty())
-	{
-		Ost_SuedFree = true;
-	}
-	else
-		Ost_SuedFree = false;
-}
-
-
 
 //Autos spawnen quasi direkt auf der Kreuzung und zählen Fahrtweg runter, wenn das erlaubt ist
 
-void SimulationMaster::spawnAutosNordKreuzung()
+void SimulationMaster::spawnAutosNordKreuzung()//Spawn Norden
 {
 
 	if (randValueDirection <= 9)// Fahr nach Norden
@@ -431,16 +299,16 @@ void SimulationMaster::spawnAutosNordKreuzung()
 	{
 		if (randValueType <= 1)
 		{
-			this->Nord_Kreuzung1.push_back(new Autos(2, -8, ost, Map::a, 0.75, 2.5 )); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->Nord_Kreuzung1.push_back(new Autos(2, -8, Spawnpoint::A, ost, Map::a, 0.75, 2.5 )); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 			counterNord++;														//hier müssen die Geraden hin anstatt des Fahrtweges.
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->Nord_Kreuzung1.push_back(new Autos(2, -8, ost, Map::a, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->Nord_Kreuzung1.push_back(new Autos(2, -8, Spawnpoint::A,ost, Map::a, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 			counterNord++;
 		}
 		else {
-			this->Nord_Kreuzung1.push_back(new Autos(2, -8, ost, Map::a, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->Nord_Kreuzung1.push_back(new Autos(2, -8, Spawnpoint::A, ost, Map::a, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 			counterNord++;
 		}
 	}
@@ -449,16 +317,16 @@ void SimulationMaster::spawnAutosNordKreuzung()
 	{
 		if (randValueType <= 1)
 		{
-			this->Nord_Kreuzung1.push_back(new Autos(2, -8, sued, Map::a, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->Nord_Kreuzung1.push_back(new Autos(2, -8, Spawnpoint::A, sued, Map::a, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 			counterNord++;
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->Nord_Kreuzung1.push_back(new Autos(2, -8, sued, Map::a, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->Nord_Kreuzung1.push_back(new Autos(2, -8, Spawnpoint::A, sued, Map::a, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 			counterNord++;
 		}
 		else
-			this->Nord_Kreuzung1.push_back(new Autos(2, -8, sued, Map::a, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->Nord_Kreuzung1.push_back(new Autos(2, -8, Spawnpoint::A, sued, Map::a, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 		counterNord++;
 	}
 
@@ -466,35 +334,35 @@ void SimulationMaster::spawnAutosNordKreuzung()
 	{
 		if (randValueType <= 1)
 		{
-			this->Nord_Kreuzung1.push_back(new Autos(2, -8, west, Map::a ,0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->Nord_Kreuzung1.push_back(new Autos(2, -8, Spawnpoint::A, west, Map::a ,0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 			counterNord++;
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->Nord_Kreuzung1.push_back(new Autos(2, -8, west, Map::a, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->Nord_Kreuzung1.push_back(new Autos(2, -8, Spawnpoint::A, west, Map::a, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 			counterNord++;
 		}
 		else
-			this->Nord_Kreuzung1.push_back(new Autos(2, -8, west, Map::a, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->Nord_Kreuzung1.push_back(new Autos(2, -8, Spawnpoint::A, west, Map::a, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 		counterNord++;
 	}
 }
 
 
-void SimulationMaster::spawnAutosOstKreuzung()
+void SimulationMaster::spawnAutosOstKreuzung()//Spawn Osten
 {
 	if (randValueDirection <= 9)// Fahr nach Norden
 	{
 		if (randValueType <= 1)
 		{
-			this->Ost_Kreuzung1.push_back(new Autos(-12 , -6, nord, Map::e, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->Ost_Kreuzung1.push_back(new Autos(-12 , -6, Spawnpoint::E, nord, Map::e, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->Ost_Kreuzung1.push_back(new Autos( - 12, -6, nord, Map::e, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->Ost_Kreuzung1.push_back(new Autos( - 12, -6, Spawnpoint::E, nord, Map::e, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 		}
 		else
-			this->Ost_Kreuzung1.push_back(new Autos(-12, -6, nord, Map::e, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->Ost_Kreuzung1.push_back(new Autos(-12, -6, Spawnpoint::E, nord, Map::e, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 
 	}
 
@@ -507,28 +375,28 @@ void SimulationMaster::spawnAutosOstKreuzung()
 	{
 		if (randValueType <= 1)
 		{
-			this->Ost_Kreuzung1.push_back(new Autos(-12, -2, sued, Map::d, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->Ost_Kreuzung1.push_back(new Autos(-12, -2, Spawnpoint::D, sued, Map::d, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->Ost_Kreuzung1.push_back(new Autos(-12, -2, sued, Map::d, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->Ost_Kreuzung1.push_back(new Autos(-12, -2, Spawnpoint::D, sued, Map::d, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 		}
 		else
-			this->Ost_Kreuzung1.push_back(new Autos(-12, -2, sued, Map::d, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->Ost_Kreuzung1.push_back(new Autos(-12, -2, Spawnpoint::D, sued, Map::d, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 	}
 
 	else //Fahr nach Westen
 	{
 		if (randValueType <= 1)
 		{
-			this->Ost_Kreuzung1.push_back(new Autos(-12, -6, west, Map::e, 0.75f, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->Ost_Kreuzung1.push_back(new Autos(-12, -6,Spawnpoint::D, west, Map::e, 0.75f, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->Ost_Kreuzung1.push_back(new Autos(-12, -6, west, Map::e, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->Ost_Kreuzung1.push_back(new Autos(-12, -6, Spawnpoint::D, west, Map::e, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 		}
 		else
-			this->Ost_Kreuzung1.push_back(new Autos(-12, -6, west, Map::e, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->Ost_Kreuzung1.push_back(new Autos(-12, -6, Spawnpoint::D, west, Map::e, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 	}
 }
 
@@ -538,42 +406,42 @@ void SimulationMaster::spawnAutosWestKreuzung()
 	{
 		if (randValueType <= 1)
 		{
-			this->West_Kreuzung1.push_back(new Autos(12, 2, nord, Map::d, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->West_Kreuzung1.push_back(new Autos(12, 2, Spawnpoint::C, nord, Map::c, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->West_Kreuzung1.push_back(new Autos(12, 2, nord, Map::d, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->West_Kreuzung1.push_back(new Autos(12, 2, Spawnpoint::C,nord, Map::c, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 		}
 		else
-			this->West_Kreuzung1.push_back(new Autos(12, 2, nord, Map::d, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->West_Kreuzung1.push_back(new Autos(12, 2, Spawnpoint::C, nord, Map::c, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 	}
 
 	else if (randValueDirection >= 10 && randValueDirection <= 9) //Fahr nach Osten
 	{
 		if (randValueType <= 1)
 		{
-			this->West_Kreuzung1.push_back(new Autos(12, 2, ost, Map::d, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->West_Kreuzung1.push_back(new Autos(12, 2, Spawnpoint::C, ost, Map::c, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->West_Kreuzung1.push_back(new Autos(12, 2, ost, Map::d, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->West_Kreuzung1.push_back(new Autos(12, 2, Spawnpoint::C, ost, Map::c, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 		}
 		else
-			this->West_Kreuzung1.push_back(new Autos(12, 2, ost, Map::d, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->West_Kreuzung1.push_back(new Autos(12, 2, Spawnpoint::C, ost, Map::c, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 	}
 
 	else if (randValueDirection >= 50 && randValueDirection <= 59) //Fahr nach Sueden
 	{
 		if (randValueType <= 1)
 		{
-			this->West_Kreuzung1.push_back(new Autos(12, 6, nord, Map::f, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->West_Kreuzung1.push_back(new Autos(12, 6,Spawnpoint::F, nord, Map::f, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->West_Kreuzung1.push_back(new Autos(12, 6, nord, Map::f, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->West_Kreuzung1.push_back(new Autos(12, 6, Spawnpoint::F, nord, Map::f, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 		}
 		else
-			this->West_Kreuzung1.push_back(new Autos(12, 6, nord, Map::f, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->West_Kreuzung1.push_back(new Autos(12, 6, Spawnpoint::F, nord, Map::f, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 	}
 
 	else //Fahr nach Westen
@@ -589,28 +457,28 @@ void SimulationMaster::spawnAutosSuedKreuzung()
 	{
 		if (randValueType <= 1)
 		{
-			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, nord, Map::b, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->Sued_Kreuzung1.push_back(new Autos(-2, 8,Spawnpoint::B, nord, Map::b, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, nord, Map::b, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, Spawnpoint::B ,nord, Map::b, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 		}
 		else
-			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, nord, Map::b, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, Spawnpoint::B , nord, Map::b, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 	}
 
 	else if (randValueDirection >= 10 && randValueDirection <= 9) //Fahr nach Osten
 	{
 		if (randValueType <= 1)
 		{
-			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, ost, Map::b, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, Spawnpoint::B , ost, Map::b, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, nord, Map::b, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, Spawnpoint::B , nord, Map::b, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 		}
 		else
-			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, nord, Map::b, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, Spawnpoint::B , nord, Map::b, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 	}
 
 	else if (randValueDirection >= 50 && randValueDirection <= 59) //Fahr nach Sueden
@@ -622,14 +490,14 @@ void SimulationMaster::spawnAutosSuedKreuzung()
 	{
 		if (randValueType <= 1)
 		{
-			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, west, Map::b, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, Spawnpoint::B , west, Map::b, 0.75, 2.5)); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 		}
 		else if (randValueType >= 2 && randValueType < 9)
 		{
-			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, nord, Map::b, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
+			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, Spawnpoint::B , nord, Map::b, 1.f, 2.5));// Spawn Fahrertyp 2, Reaktionszeit 1 sekunde
 		}
 		else
-			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, nord, Map::b, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
+			this->Sued_Kreuzung1.push_back(new Autos(-2, 8, Spawnpoint::B , nord, Map::b, 2.f, 2.5));//Spawn Fahrertyp 3, Reaktionszeit 2 sekunden
 	}
 }
 

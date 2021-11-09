@@ -3,10 +3,10 @@
 
 //Zykluszeiten vorgeben, Anfangsgeschwindigkeit 0, nur wenn Ampel nicht rot ist, wenn linksabbieger fahren wollen , erstmal streckenabschnitt der blockiert laufen lassen
 //Geschwindigkeit die das Auto hat
-Autos::Autos(float x, float y, std::string Direction, Gerade g, float ReactionTime, float r) {
+Autos::Autos(float x, float y, Spawnpoint spawn, std::string Direction, Gerade g, float ReactionTime, float r) {
 	beschleunigung = 1;
 	bremsBeschleunigung = -2;
-	fahrtweg = g;
+	fahrtwegBeginn = g;
 	direction = Direction;
 	Auto.setPoint(x, y);
 	internalTimer.restart();
@@ -16,9 +16,64 @@ Autos::Autos(float x, float y, std::string Direction, Gerade g, float ReactionTi
 	weg = 0;
 	reactionTime = ReactionTime;
 
+	abstandHalter.setKreis(r, Auto);
 
+	switch (spawn)
+	{
+	case Spawnpoint::B: //Spawn auf Gerade b (im Süden)
+	{
+		if (direction == "ost")
+		{
+			fahrtwegWechsel = Map::c;
+		}
+		else if (direction == "west")
+		{
+			fahrtwegWechsel = Map::d;
+		}
+		else
+			fahrtwegWechsel = fahrtwegBeginn;
+	}
+	case Spawnpoint::D:
+	{
+		if (direction == "sued")
+		{
+			fahrtwegWechsel = Map::a;
+		}
+		else
+			fahrtwegWechsel = fahrtwegBeginn;
+	}
+	case Spawnpoint::E:
+	{
+		fahrtwegWechsel = Map::b;
+	}
+	case Spawnpoint::A:
+	{
+		if (direction == "ost")
+		{
+			fahrtwegWechsel = Map::c;
+		}
+		else if (direction == "west")
+		{
+			fahrtwegWechsel = Map::d;
+		}
+		else
+			fahrtwegWechsel = fahrtwegBeginn;
+	}
+	case Spawnpoint::F:
+	{
+		fahrtwegWechsel = Map::a;
+	}
+	case Spawnpoint::C:
+	{
+		if (direction == "nord")
+		{
+			fahrtwegWechsel = Map::b;
+		}
+		else
+			fahrtwegWechsel = fahrtwegBeginn;
+	}
+	}
 }
-
 
 Autos::~Autos()
 {
@@ -39,7 +94,7 @@ void Autos::speedUp()// weg muss dann im Koordinatensystem entweder das Auto par
 		weg = 0.5 * beschleunigung * (pow(zeit, 2)) + (anfangsGeschwindigkeit * zeit); //aus Integral geschwindigkeit
 
 		gesamtWeg = gesamtWeg + weg - wegBefore;
-		streckenLänge= streckenLänge - gesamtWeg + wegBefore;
+		streckenLänge = streckenLänge - gesamtWeg + wegBefore;
 
 }
 
@@ -103,6 +158,16 @@ float Autos::getInternalTimer()
 float Autos::getReactionTime()
 {
 	return reactionTime;
+}
+
+float Autos::getX()
+{
+	return Auto.getX();
+}
+
+float Autos::getY()
+{
+	return Auto.getY();
 }
 
 
