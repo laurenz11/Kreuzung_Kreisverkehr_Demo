@@ -59,9 +59,8 @@ protected:
 	//bool isMoving; //gibt an ob sich das Element bewegt.
 	//bool isSlowingDown; //für später, gibt an ob das Element gerade bremst
 
-	Point Auto;//Jedes Auto ist dann ein Punkt auf der Geraden mit einem Kreis mit gegebenen Abstandsradius, der nicht geschnitten werden darf
-	Point spawnAuto; // Punkt, an dem das Auto gespawnt werden soll
+	Point* Auto;//Jedes Auto ist dann ein Punkt auf der Geraden mit einem Kreis mit gegebenen Abstandsradius, der nicht geschnitten werden darf
 	Gerade fahrtweg; //Geraden, auf dem sich das Auto bewegen soll
-	Kreis abstandHalter;
+	Kreis* abstandHalter;
 };
 

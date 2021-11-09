@@ -45,17 +45,17 @@ void SimulationMaster::moveAutosOnKreuzung()
 {
 	if (ampel->NordSuedIsGreen)
 	{
-		moveAutosOnKreuzungNord();
-		moveAutosOnKreuzungSued();
+		moveAutosNord();
+		moveAutosSued();
 	}
 	else if (ampel->OstWestIsGreen)
 	{
-		moveAutosOnKreuzungOst();
-		moveAutosOnKreuzungWest();
+		moveAutosOst();
+		moveAutosWest();
 	}
 }
 
-void SimulationMaster::moveAutosOnKreuzungNord()
+void SimulationMaster::moveAutosNord()
 {
 	for (int i = 0; i < Nord_Sued_Move1.size(); i++)
 	{
@@ -94,7 +94,7 @@ void SimulationMaster::moveAutosOnKreuzungNord()
 	}
 }
 
-void SimulationMaster::moveAutosOnKreuzungSued()
+void SimulationMaster::moveAutosSued()
 {
 	for (int i = 0; i < Sued_Nord_Move1.size(); i++)
 	{
@@ -132,7 +132,7 @@ void SimulationMaster::moveAutosOnKreuzungSued()
 	}
 }
 
-void SimulationMaster::moveAutosOnKreuzungOst()
+void SimulationMaster::moveAutosOst()
 {
 	for (int i = 0; i < Ost_Nord_Move1.size(); i++)
 	{
@@ -170,7 +170,7 @@ void SimulationMaster::moveAutosOnKreuzungOst()
 	}
 }
 
-void SimulationMaster::moveAutosOnKreuzungWest()
+void SimulationMaster::moveAutosWest()
 {
 	for (int i = 0; i < West_Nord_Move1.size(); i++)
 	{
@@ -431,7 +431,7 @@ void SimulationMaster::spawnAutosNordKreuzung()
 	{
 		if (randValueType <= 1)
 		{
-			this->Nord_Kreuzung1.push_back(new Autos(2, -8, ost, Map::a, 0.75, 2.5 )); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
+			this->Nord_Kreuzung1.push_back(new Autos(2, -8, ost, a, 0.75, 2.5 )); // Spawn Fahrertyp 1, Reaktionszeit 0.75 sekunden
 			counterNord++;														//hier müssen die Geraden hin anstatt des Fahrtweges.
 		}
 		else if (randValueType >= 2 && randValueType < 9)

@@ -23,18 +23,12 @@ public:
 	void spawnAutosWestKreuzung();
 	void spawnAutosOstKreuzung();
 
-	//spawnt Autos 40m vor der Ampel, ist erstmal uninteressant, weil die Autos zunächst auf der Kreuzung spawnen sollen
-	void spawnAutosNord();
-	void spawnAutosSued();
-	void spawnAutosWest();
-	void spawnAutosOst();
-	
 	void moveAutos();//soll Autos, die in den Move-Vektoren sind bewegen.
 	void moveAutosOnKreuzung();
-	void moveAutosOnKreuzungNord();
-	void moveAutosOnKreuzungSued();
-	void moveAutosOnKreuzungOst();
-	void moveAutosOnKreuzungWest();
+	void moveAutosNord();
+	void moveAutosSued();
+	void moveAutosOst();
+	void moveAutosWest();
 
 
 	void moveAutosVorKreuzung();//für nachher

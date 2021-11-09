@@ -6,15 +6,15 @@
 Autos::Autos(float x, float y, std::string Direction, Gerade g, float ReactionTime, float r) {
 	beschleunigung = 1;
 	bremsBeschleunigung = -2;
+	fahrtweg = g;
 	direction = Direction;
-	Auto.setPoint(x, y);
+	Auto->setPoint(x, y);
 	internalTimer.restart();
 	anfangsGeschwindigkeit = 0; // in meter pro sekunde 
 	gesamtWeg = 0;
 	wegBefore = 0;
 	weg = 0;
 	reactionTime = ReactionTime;
-
 
 
 }
