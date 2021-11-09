@@ -1,8 +1,7 @@
 #include "Point.h"
 Point::Point()
 {
-	x;
-	y
+	
 }
 
 void Point::setPoint(float X, float Y)

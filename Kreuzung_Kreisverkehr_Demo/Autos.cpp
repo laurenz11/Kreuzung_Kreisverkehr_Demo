@@ -3,7 +3,7 @@
 
 //Zykluszeiten vorgeben, Anfangsgeschwindigkeit 0, nur wenn Ampel nicht rot ist, wenn linksabbieger fahren wollen , erstmal streckenabschnitt der blockiert laufen lassen
 //Geschwindigkeit die das Auto hat
-Autos::Autos(Point Auto, std::string Direction, float Fahrtweg, float ReactionTime, float FahrtwegOnKreuzung) {
+Autos::Autos(float x, float y,std::string Direction, Gerade g, float ReactionTime, float r) {
 	beschleunigung = 2;
 	bremsBeschleunigung = -1;
 	Auto = new Point();
