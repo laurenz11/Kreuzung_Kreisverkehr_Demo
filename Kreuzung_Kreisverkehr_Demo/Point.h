@@ -4,10 +4,16 @@ class Point
 public:
 
 	Point();
-	float x = 0;
-	float y = 0;
-	void changeSize(float X, float Y);
-	float getY();
+	~Point();
+
+	float x;
+	float y;
+
+	void setPoint(float X, float Y);
+	void movePoint(float X, float Y);
+
 	float getX();
+	float getY();
+
 };
 

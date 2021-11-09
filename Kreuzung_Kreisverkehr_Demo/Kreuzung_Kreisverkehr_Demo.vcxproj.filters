@@ -48,6 +48,9 @@
     <ClInclude Include="Map.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="KOOS.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Autos.cpp">
@@ -87,6 +90,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="KOOS.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

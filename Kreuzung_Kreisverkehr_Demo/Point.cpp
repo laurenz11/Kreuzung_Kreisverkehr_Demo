@@ -1,24 +1,29 @@
 #include "Point.h"
-
 Point::Point()
 {
-    y = 0;
-    x = 0;
+	x;
+	y;
 }
 
-void Point::changeSize(float X, float Y)
+void Point::setPoint(float X, float Y)
 {
-    x = X;
-    y = Y;
+	x = X;
+	y = Y;
 
 }
 
-float Point::getY()
+void Point::movePoint(float X, float Y)
 {
-    return y;
+	x = X; 
+	y = Y;
 }
 
 float Point::getX()
 {
-    return x;
+	return x;
+}
+
+float Point::getY()
+{
+	return y;
 }

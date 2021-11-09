@@ -155,6 +155,7 @@
     <ClInclude Include="Autos.h" />
     <ClInclude Include="Gerade.h" />
     <ClInclude Include="GUI.h" />
+    <ClInclude Include="KOOS.h" />
     <ClInclude Include="Kreis.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Point.h" />
@@ -168,6 +169,7 @@
     <ClCompile Include="Autos.cpp" />
     <ClCompile Include="Gerade.cpp" />
     <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="KOOS.cpp" />
     <ClCompile Include="Kreis.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
