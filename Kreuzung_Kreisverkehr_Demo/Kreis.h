@@ -7,11 +7,11 @@ public :
 
 	Kreis();
 	~Kreis();
+
+	void setKreis(float R, Point center);
 	float r;
-	float x;
+	float x; 
 	float y;
-	Point center;
-	void setKreis(float R, Point Center);
 
 
 };

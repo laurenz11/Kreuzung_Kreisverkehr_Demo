@@ -3,20 +3,19 @@
 
 //Zykluszeiten vorgeben, Anfangsgeschwindigkeit 0, nur wenn Ampel nicht rot ist, wenn linksabbieger fahren wollen , erstmal streckenabschnitt der blockiert laufen lassen
 //Geschwindigkeit die das Auto hat
-Autos::Autos(float x, float y,std::string Direction, Gerade g, float ReactionTime, float r) {
-	beschleunigung = 2;
-	bremsBeschleunigung = -1;
-	Auto = new Point();
+Autos::Autos(float x, float y, std::string Direction, Gerade g, float ReactionTime, float r) {
+	beschleunigung = 1;
+	bremsBeschleunigung = -2;
 	direction = Direction;
-	streckenLänge = Fahrtweg;
-	originalFahrtweg = Fahrtweg;
-	fahrtwegKreuzung = FahrtwegOnKreuzung;
+	Auto.setPoint(x, y);
 	internalTimer.restart();
 	anfangsGeschwindigkeit = 0; // in meter pro sekunde 
 	gesamtWeg = 0;
 	wegBefore = 0;
 	weg = 0;
 	reactionTime = ReactionTime;
+
+
 
 }
 
@@ -25,21 +24,23 @@ Autos::~Autos()
 {
 }
 
+void Autos::initKreuzung()
+{
+	kreuzung.createKreuzung();
+}
+
 void Autos::speedUp()// weg muss dann im Koordinatensystem entweder das Auto parallel der x-Achse, oder auf der y-Achse verschieben, wenn die Fahrbedingung erüllt ist 
 {
 	setZeit();
 	geschwindigkeit = beschleunigung * zeit + anfangsGeschwindigkeit; //aus Integral weg
 
-	if (geschwindigkeit < 8.333) {
 		wegBefore = weg;
 
 		weg = 0.5 * beschleunigung * (pow(zeit, 2)) + (anfangsGeschwindigkeit * zeit); //aus Integral geschwindigkeit
 
 		gesamtWeg = gesamtWeg + weg - wegBefore;
 		streckenLänge= streckenLänge - gesamtWeg + wegBefore;
-	}
-	else
-		keepPace();
+
 }
 
 void Autos::slowDown()
@@ -88,29 +89,10 @@ void Autos::setZeit()
 	//std::cout << "internalTimer: " << zeit << std::endl;
 }
 
-void Autos::changeIsMoving()
-{
-	if (geschwindigkeit > 0)
-	{
-		isMoving = true;
-	}
-	else
-		isMoving = false;
-}
 
 float Autos::getFahrtWeg()
 {
 	return streckenLänge;
-}
-
-float Autos::getOriginalFahrtweg()
-{
-	return originalFahrtweg;
-}
-
-bool Autos::getIsMoving()
-{
-	return isMoving;
 }
 
 float Autos::getInternalTimer()
@@ -123,10 +105,6 @@ float Autos::getReactionTime()
 	return reactionTime;
 }
 
-std::string Autos::getDirection()
-{
-	return direction;
-}
 
 
 

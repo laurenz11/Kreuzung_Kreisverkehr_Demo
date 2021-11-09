@@ -29,13 +29,6 @@ public:
 	void spawnAutosWest();
 	void spawnAutosOst();
 	
-	//Für später, wenn die Autos nicht mehr direkt an der Kreuzung starten, sondern einen Anfahrtweg haben
-	void pushToKreuzungNord();
-	void pushToKreuzungOst();
-	void pushToKreuzungWest();
-	void pushToKreuzungSued();
-
-
 	void moveAutos();//soll Autos, die in den Move-Vektoren sind bewegen.
 	void moveAutosOnKreuzung();
 	void moveAutosOnKreuzungNord();
@@ -53,11 +46,7 @@ public:
 	void allowMovementWest();
 	void allowMovementOst();
 
-	void checkIfInFront();//überprüft, ob sich ein Auto vor demjenigen befindet, dass gerade losfahren soll
-	void checkIfInFrontNord();
-	void checkIfInFrontSued();
-	void checkIfInFrontOst();
-	void checkIfInFrontWest();
+
 
 	bool inFront;//speichert für checkIfInFront, ob fahren erlaubt ist
 
@@ -129,40 +118,6 @@ public:
 	//Einfügen der Ampelschaltung
 	Ampel* ampel;
 	void initAmpel();
-
-	/*Vectoren für Fahrertyp2
-	std::vector<Autos*> Nord_West2;
-	std::vector<Autos*> Nord_Ost2;
-	std::vector<Autos*> Nord_Sued2;
-
-	std::vector<AutosFahrertyp2*> Sued_West2;
-	std::vector<AutosFahrertyp2*> Sued_Ost2;
-	std::vector<AutosFahrertyp2*> Sued_Nord2;
-
-	std::vector<AutosFahrertyp2*> Ost_West2;
-	std::vector<AutosFahrertyp2*> Ost_Sued2;
-	std::vector<AutosFahrertyp2*> Ost_Nord2;
-
-	std::vector<AutosFahrertyp2*> West_Ost2;
-	std::vector<AutosFahrertyp2*> West_Sued2;
-	std::vector<AutosFahrertyp2*> West_Nord2;
-
-	//Vectoren für Fahrertyp3
-	std::vector<AutosFahrertyp3*> Nord_West3;
-	std::vector<AutosFahrertyp3*> Nord_Ost3;
-	std::vector<AutosFahrertyp3*> Nord_Sued3;
-
-	std::vector<AutosFahrertyp3*> Sued_West3;
-	std::vector<AutosFahrertyp3*> Sued_Ost3;
-	std::vector<AutosFahrertyp3*> Sued_Nord3;
-
-	std::vector<AutosFahrertyp3*> Ost_West3;
-	std::vector<AutosFahrertyp3*> Ost_Sued3;
-	std::vector<AutosFahrertyp3*> Ost_Nord3;
-
-	std::vector<AutosFahrertyp3*> West_Ost3;
-	std::vector<AutosFahrertyp3*> West_Sued3;
-	std::vector<AutosFahrertyp3*> West_Nord3;*/
 
 	//globaler Timer für die Zeitmessung
 	sf::Clock globalTimer;
