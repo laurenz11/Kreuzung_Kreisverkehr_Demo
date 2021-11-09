@@ -35,6 +35,11 @@ Gerade::~Gerade()
 	 PointOnGerade.movePoint(X, m * X + b);
  }
 
+
+ void Gerade::movePointOnGeradeY(Point PointOnGerade, float Y)
+{
+	 PointOnGerade.setPoint(f, Y);
+}
  void Gerade::setGerade(Point point1, Point point2)
  {
 	 if (point1.x - point2.x == 0)
